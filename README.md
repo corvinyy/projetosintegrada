@@ -2,14 +2,20 @@
 
 Este repositório contém o código-fonte do site institucional da **Projetos Consultoria Integrada (PCI)**, uma empresa júnior comprometida com a excelência em consultoria e soluções integradas para empresas e organizações.
 
+
+### Desenvolvedora
+- **👤💻 [corvinyy (Lorena Araujo)](https://github.com/corvinyy)**
+
 ![Preview of the current progress](./assets/imgs/previews/pv2.png)
 ![Preview of the current progress](./assets/imgs/previews/pv3.png)
 ---
 
-## 📁 Estrutura do Projeto
+`projeto desenvolvido para a Projetos Consultoria Integrada`
+
+### 📁 Estrutura do Projeto
 
 ```bash
-.
+
 PCI-SITE/
 ├── assets/ # Imagens, ícones e logos
 │ ├── icons/
@@ -75,7 +81,8 @@ PCI-SITE/
 
 <br></br>
 ---
-## 🧩 Páginas
+
+### 🧩 Páginas
 
 - Home: Apresentação da empresa, parceiros e navegação principal
 - Sobre: Informações sobre a história, MVV da PCI e diretores
@@ -85,7 +92,7 @@ PCI-SITE/
 - Contato: Formulário de contato, mapa e informações de comunicação e localização
 
 ---
-## 💡 CURIOSIDADES
+### 💡 CURIOSIDADES
 - Reponsividade
 - Botão de Whatsapp que leva direto ao contato da empresa com mensagem automática
 - Botão para voltar ao topo da página
@@ -95,18 +102,29 @@ PCI-SITE/
 
 ---
 
-## 🚀 Como Rodar o Projeto Localmente
+### 🚀 Como Rodar o Projeto Localmente
 
 Como o site é 100% front-end (HTML, CSS e JS), não há necessidade de servidor backend.
 Você pode abrir o projeto localmente de maneira bem simples:
 
-- 1. Faça o clone do repositório: https://github.com/corvinyy/projetosintegrada.git
-- 2. Acesse a pasta do projeto: ``cd projetosintegrada``
-- 3. Dê duplo clique no arquivo ``index.html`` ou utilize a extensão ``Live Server`` no VSCode
+
+**1. Faça o clone do repositório** 
+
+```bash
+https://github.com/corvinyy/projetosintegrada.git
+```
+
+**2. Acesse a pasta do projeto**  
+
+```bash
+cd projetosintegrada
+```
+
+**3. Dê duplo clique no arquivo ``index.html`` ou utilize a extensão ``Live Server`` no VSCode**
 
 ---
 
-## 📫 Contato
+### 📫 Contato
 
 - 🌐 Site: https://projetosintegrada.com.br/
 - 📞 Telefone: (61) 99853-8516
@@ -115,7 +133,7 @@ Você pode abrir o projeto localmente de maneira bem simples:
 
 ---
 
-## 🔹 ICONS - CRÉDITOS
+### 🔹 ICONS - CRÉDITOS
 
 <div> 
     Icons feitos por
@@ -124,6 +142,6 @@ Você pode abrir o projeto localmente de maneira bem simples:
 </div>
 
 ---
-## 📝 Licença
+### 📝 Licença
 
-Este projeto é de uso institucional da Projetos Consultoria Integrada. Direitos reservados © 2025.
+``Este projeto é de uso institucional da Projetos Consultoria Integrada. Direitos reservados © 2025.``
