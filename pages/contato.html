@@ -6,59 +6,86 @@
     <title>Contato - Projetos Consultoria Integrada</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
+
+<style>
+  /* ===== Header padronizado estilo econsult (PCI) ===== */
+  .pci-header{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(251,250,249,.96);backdrop-filter:blur(8px);border-bottom:1px solid #eee;font-family:"Maven Pro",system-ui,-apple-system,"Segoe UI",sans-serif}
+  .pci-container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .pci-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px;position:relative}
+  .pci-logo-area{display:flex;align-items:center}
+  .pci-logo-area img{height:40px;width:auto}
+  .pci-nav-links{display:flex;align-items:center;gap:30px}
+  .pci-nav-links>a,.pci-servicos-btn{color:#171717;text-decoration:none;font-weight:600;font-size:.98rem;transition:.2s}
+  .pci-nav-links>a:hover{color:#940000}
+  .pci-dropdown{position:relative;display:inline-flex}
+  .pci-servicos-btn{background:none;border:none;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:0}
+  .pci-servicos-btn .pci-caret{transition:transform .25s;font-size:.75em}
+  .pci-dropdown.open .pci-servicos-btn{color:#940000}
+  .pci-dropdown.open .pci-servicos-btn .pci-caret{transform:rotate(180deg)}
+  .pci-servicos-menu{position:absolute;top:calc(100% + 16px);left:0;min-width:220px;background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
+  .pci-dropdown.open .pci-servicos-menu{display:flex;animation:pciMenuIn .2s ease}
+  @keyframes pciMenuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  .pci-servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:#171717;text-decoration:none;transition:.18s}
+  .pci-servicos-menu a:hover{background:#f4f4f4;color:#940000;padding-left:18px}
+  .pci-cta{display:inline-flex;align-items:center;background:#940000;color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 24px;border-radius:10px;transition:.25s;border:2px solid #940000}
+  .pci-cta:hover{background:#7a0000;border-color:#7a0000}
+  .pci-menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:#940000}
+  /* ===== WhatsApp interativo ===== */
+  .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,.45);animation:wppBounce 2.6s ease-in-out infinite;text-decoration:none}
+  .wpp-float img{width:34px;height:34px;filter:brightness(0) invert(1)}
+  .wpp-float:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(37,211,102,.6)}
+  .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.55;animation:wppPulse 2s ease-out infinite;z-index:-1}
+  .wpp-tooltip{position:absolute;right:72px;background:#111;color:#fff;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(10px);transition:.25s}
+  .wpp-tooltip::after{content:"";position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:6px solid transparent;border-left-color:#111}
+  .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
+  @keyframes wppPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.8);opacity:0}}
+  @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  @media(max-width:880px){
+    .pci-menu-toggle{display:block}
+    .pci-nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid #eee;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 16px;box-shadow:0 18px 40px rgba(0,0,0,.1);display:none}
+    .pci-nav-links.nav-open{display:flex}
+    .pci-nav-links>a,.pci-dropdown{width:100%;padding:12px 0;border-bottom:1px solid #eee}
+    .pci-dropdown{display:block}
+    .pci-servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
+    .pci-cta{display:none}
+  }
+</style>
 </head>
 
 <body>  
-    <header>
-        <div class="menu-lateral">
-            <img src="../assets/icons/menu-icon.png" alt="Menu Icon" width="35px" height="35px" onclick="menuLateral()">
+    <header class="pci-header">
+  <div class="pci-container pci-nav">
+    <a href="../index.html" class="pci-logo-area">
+      <img src="../assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
+    </a>
+    <nav class="pci-nav-links">
+      <a href="../pages/sobre.html">Sobre Nós</a>
+      <div class="pci-dropdown">
+        <button type="button" class="pci-servicos-btn" aria-expanded="false">Serviços <span class="pci-caret">&#9662;</span></button>
+        <div class="pci-servicos-menu">
+          <a href="../pages/consultorias.html">Consultorias</a>
+          <a href="../pages/arquitetura.html">Arquitetura</a>
+          <a href="../pages/portifolio.html">Portfólio</a>
         </div>
-
-        <div class="logo-PCI">
-            <a href="../index.html">
-                <img src="../assets/logos/PCI-logo-branca.png" alt="Logo PCI" height="80px">
-            </a>    
-        </div>
-
-        <div class="logo-PCI-escrita">
-            <a href="../index.html">
-                <img src="../assets/logos/PCI-logo-escrita-branca.png" alt="Logo PCI" height="80px">
-            </a>    
-        </div>
-
-        <div class="header-nav">
-            <nav>
-                <ul>
-                    <a href="../index.html" id="nav-home" >Início</a>
-                    <a href="../pages/sobre.html" id=nav-sobre >Sobre Nós</a>
-                    <li class="solucoes">
-                        <a href="#" class="botao-solucoes">Soluções</a>
-                        <div class="solucoes-info">
-                            <a href="../pages/consultorias.html">Consultorias</a>
-                            <a href="../pages/arquitetura.html">Arquitetura</a>
-                        </div>
-                    </li>
-                    <a href="../pages/portifolio.html" id="nav-portifolio">Portfólio</a>
-                    <a href="../pages/contato.html" id="nav-contato" class="active">Contato</a>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="icon-telefone">
-            <a href="../pages/contato.html">
-                <img src="../assets/icons/telefone-icon.png" alt="Telefone Icon" width="35px" height="35px">
-            </a>    
-        </div>
-    </header>
+      </div>
+      <a href="../index.html#parceiros">Parceiros</a>
+      <a href="../index.html#cases">Cases</a>
+    </nav>
+    <a href="../pages/contato.html" class="pci-cta">Fale conosco</a>
+    <button class="pci-menu-toggle" aria-label="Abrir menu">&#9776;</button>
+  </div>
+</header>
 
     <a href="#" class="scroll">
         <span>&#8593;</span> 
     </a>
     
     <div class="botao-wpp">
-        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank">
-            <img src="../assets/logos/wpp-logo.png" alt="WhatsApp" width="65px" height="65px">
-        </a>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
+      <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
+      <span class="wpp-pulse"></span>
+      <img src="../assets/logos/wpp-logo.png" alt="WhatsApp">
+    </a>
     </div>
 
     <main>
@@ -203,6 +230,30 @@
     </footer>
     
     <script src="../js/script.js"></script>
+<script>
+  (function(){
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest('.pci-servicos-btn');
+      var drop = document.querySelector('.pci-dropdown');
+      if(btn && drop){
+        var open = drop.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        e.preventDefault();
+        return;
+      }
+      if(drop && !e.target.closest('.pci-dropdown')){
+        drop.classList.remove('open');
+        var b = drop.querySelector('.pci-servicos-btn');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+      var tgl = e.target.closest('.pci-menu-toggle');
+      if(tgl){
+        var nav = document.querySelector('.pci-nav-links');
+        if(nav) nav.classList.toggle('nav-open');
+      }
+    });
+  })();
+</script>
 </body>
 
-</html>
+                                </html>
