@@ -109,6 +109,39 @@
     .foot-grid{grid-template-columns:1fr}
     .section{padding:60px 0}
   }
+
+  /* ===== Serviços dropdown (estilo econsult) ===== */
+  .nav-dropdown{position:relative;display:inline-flex}
+  .nav-servicos-btn{background:none;border:none;font:inherit;color:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:0}
+  .nav-servicos-btn .caret{transition:transform .25s;font-size:.75em}
+  .nav-dropdown.open .nav-servicos-btn .caret{transform:rotate(180deg)}
+  .nav-dropdown.open .nav-servicos-btn{color:var(--primary)}
+  .servicos-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
+  .nav-dropdown.open .servicos-menu{display:flex;animation:menuIn .2s ease}
+  @keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  .servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:var(--text);transition:.18s}
+  .servicos-menu a:hover{background:var(--muted);color:var(--primary);padding-left:18px}
+  /* ===== WhatsApp interativo ===== */
+  .wpp-float{display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,.45);animation:wppBounce 2.6s ease-in-out infinite}
+  .wpp-float img{width:34px;height:34px;filter:brightness(0) invert(1)}
+  .wpp-float:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(37,211,102,.6)}
+  .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.55;animation:wppPulse 2s ease-out infinite;z-index:-1}
+  .wpp-tooltip{position:absolute;right:72px;background:#111;color:#fff;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(10px);transition:.25s}
+  .wpp-tooltip::after{content:"";position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:6px solid transparent;border-left-color:#111}
+  .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
+  @keyframes wppPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.8);opacity:0}}
+  @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  /* mobile nav */
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--primary)}
+  @media(max-width:880px){
+    .menu-toggle{display:block}
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:0;padding:8px 20px 16px;box-shadow:0 18px 40px rgba(0,0,0,.1);display:none}
+    .nav-links.nav-open{display:flex}
+    .nav-links>a,.nav-dropdown{width:100%;padding:12px 0;border-bottom:1px solid var(--border)}
+    .nav-dropdown{display:block}
+    .servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
+    .nav-cta{display:none}
+  }
 </style>
 </head>
 <body>
@@ -118,19 +151,25 @@
       <img src="assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="active">Início</a>
       <a href="./pages/sobre.html">Sobre Nós</a>
-      <a href="./pages/consultorias.html">Consultorias</a>
-      <a href="./pages/arquitetura.html">Arquitetura</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-servicos-btn" aria-expanded="false">Serviços <span class="caret">&#9662;</span></button>
+        <div class="servicos-menu">
+          <a href="./pages/consultorias.html">Consultorias</a>
+          <a href="./pages/arquitetura.html">Arquitetura</a>
+          <a href="./pages/portifolio.html">Portfólio</a>
+        </div>
+      </div>
       <a href="#parceiros">Parceiros</a>
       <a href="#cases">Cases</a>
-      <a href="./pages/portifolio.html">Portfólio</a>
     </nav>
-    <a href="./pages/contato.html" class="btn btn-primary">Fale conosco</a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+    <a href="./pages/contato.html" class="btn btn-primary nav-cta">Fale conosco</a>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
   </div>
 </header>
-<a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" class="wpp-float">
+<a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
+  <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
+  <span class="wpp-pulse"></span>
   <img src="assets/logos/wpp-logo.png" alt="WhatsApp">
 </a>
 <main>
@@ -267,5 +306,29 @@
   </div>
 </footer>
 <script src="js/script.js"></script>
+<script>
+  (function(){
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest('.nav-servicos-btn');
+      var drop = document.querySelector('.nav-dropdown');
+      if(btn && drop){
+        var open = drop.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        e.preventDefault();
+        return;
+      }
+      if(drop && !e.target.closest('.nav-dropdown')){
+        drop.classList.remove('open');
+        var b = drop.querySelector('.nav-servicos-btn');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+      var tgl = e.target.closest('.menu-toggle');
+      if(tgl){
+        var nav = document.querySelector('.nav-links');
+        if(nav) nav.classList.toggle('nav-open');
+      }
+    });
+  })();
+</script>
 </body>
 </html>
