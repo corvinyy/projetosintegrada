@@ -5,7 +5,7 @@ Este repositório contém o código-fonte do site institucional da **Projetos Co
 
 ### Desenvolvedores
 - **👤💻 [corvinyy (Lorena Araujo)](https://github.com/corvinyy)**
-- **👤💻 [Luis Moura)](https://github.com/luismoura-10)**
+- **👤💻 [Luis Moura](https://github.com/luismoura-10)**
 
 ![Preview of the current progress](./assets/imgs/previews/pv2.png)
 ![Preview of the current progress](./assets/imgs/previews/pv3.png)
@@ -30,7 +30,7 @@ PCI-SITE/
 │ ├── sobre.html
 │ ├── consultorias.html
 │ ├── arquitetura.html
-│ ├── portfolio.html
+│ ├── parcerias.html
 │ └── contato.html
 ├── index.html # Página inicial (Home)
 └── CNAME
@@ -85,21 +85,23 @@ PCI-SITE/
 
 ### 🧩 Páginas
 
-- Home: Apresentação da empresa, parceiros e navegação principal
-- Sobre: Informações sobre a história, MVV da PCI e diretores
-- Consultoria: Lista de soluções de consultorias
-- Arquitetura: Lista de soluções de arquitetura
-- Portifólio: Projetos, cases de sucesso e depoimentos
+- Início: Apresentação da empresa e navegação principal
+- Sobre Nós: Informações sobre a história, MVV da PCI e diretores
+- Serviços:
+    ○ Consultoria: Lista de soluções de consultorias;
+    ○ Arquitetura: Lista de soluções de arquitetura.
+- Parceiros: Lista de parceiros da PCI
+- Cases: Cases de sucesso e depoimentos
 - Contato: Formulário de contato, mapa e informações de comunicação e localização
 
 ---
 ### 💡 CURIOSIDADES
-- Reponsividade
-- Botão de Whatsapp que leva direto ao contato da empresa com mensagem automática
+- Site totalmente responsivo
+- Botão de Whatsapp conectado ao contato da empresa com mensagem automática
 - Botão para voltar ao topo da página
-- Carrosseís 
-- Botão que leva à nossa cartela de serviços
-- Google Maps do local da empresa
+- Carrosseís de imagens
+- Botão de cartela de serviços
+- Localizaçção da empresa  no Google Maps 
 
 ---
 
@@ -107,7 +109,6 @@ PCI-SITE/
 
 Como o site é 100% front-end (HTML, CSS e JS), não há necessidade de servidor backend.
 Você pode abrir o projeto localmente de maneira bem simples:
-
 
 **1. Faça o clone do repositório** 
 
@@ -129,7 +130,7 @@ cd projetosintegrada
 
 - 🌐 Site: https://projetosintegrada.com.br/
 - 📞 Telefone: (61) 99853-8516
-- 📧 E-mail: contato@projetosintegrada.com.br
+- 📧 E-mail: negocios@projetosintegrada.com.br
 - 📍 Localização: SEPN 707/907, Ceub - Asa Norte, Bloco 2, Sala 2311 CEP: 70790-075
 
 ---
@@ -145,4 +146,4 @@ cd projetosintegrada
 ---
 ### 📝 Licença
 
-``Este projeto é de uso institucional da Projetos Consultoria Integrada. Direitos reservados © 2025.``
+``Este projeto é de uso institucional da Projetos Consultoria Integrada. Direitos reservados © 2026.``
