@@ -143,6 +143,23 @@
     .servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
     .nav-cta{display:none}
   }
+
+    /* --- Stats 3 colunas --- */
+    .stats-grid-3{grid-template-columns:repeat(3,1fr)}
+    .stats-grid-3 .item.feature{grid-column:auto;text-align:left;font-size:1.15rem;line-height:1.3}
+    @media(max-width:900px){
+      .stats-grid-3{grid-template-columns:1fr}
+      .stats-grid-3 .item.feature{text-align:center}
+    }
+    /* --- Seção de soluções --- */
+    .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .solution-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .solution-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:var(--primary)}
+    .solution-card h3{font-size:1.18rem;font-weight:800;margin-bottom:12px}
+    .solution-card p{color:var(--text-soft);font-size:.97rem;line-height:1.55;flex:1;margin-bottom:18px}
+    .solution-link{color:var(--primary);font-weight:700;font-size:.95rem}
+    @media(max-width:900px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.solutions-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -197,11 +214,52 @@
   </div>
 </section>
 <section class="stats">
-  <div class="container stats-grid">
-    <div class="item feature">Maior EJ integrada do Centro-Oeste</div>
-    <div class="item"><div class="num">+250</div><div class="lbl">Projetos executados desde 2018</div></div>
-    <div class="item"><div class="num">95%</div><div class="lbl">NPS</div></div>
-    <div class="item"><div class="num">26</div><div class="lbl">Anos de experiência</div></div>
+  <div class="container stats-grid stats-grid-3">
+    <div class="item feature">Maior Empresa Júnior Integrada do Centro-Oeste</div>
+    <div class="item"><div class="num">95%</div><div class="lbl">Satisfação dos clientes</div></div>
+    <div class="item"><div class="num">26</div><div class="lbl">Anos no mercado</div></div>
+  </div>
+</section>
+
+<section class="section" id="solucoes">
+  <div class="container">
+    <div class="head-block">
+      <div class="eyebrow">Encontre a solução certa para você</div>
+      <h2>Qual desafio sua empresa precisa superar hoje?</h2>
+      <p class="lead">A PCI desenvolve estratégias personalizadas para transformar desafios em oportunidades e acelerar o crescimento do seu negócio.</p>
+    </div>
+    <div class="solutions-grid">
+        <a href="pages/contato.html" class="solution-card">
+          <h3>Estruturar minha empresa</h3>
+          <p>Organize processos, defina prioridades e construa uma base sólida para crescer de forma sustentável.</p>
+          <span class="solution-link">Saiba mais →</span>
+        </a>
+        <a href="pages/contato.html" class="solution-card">
+          <h3>Aumentar minhas vendas</h3>
+          <p>Desenvolva estratégias comerciais e de marketing para atrair mais clientes e gerar resultados consistentes.</p>
+          <span class="solution-link">Saiba mais →</span>
+        </a>
+        <a href="pages/contato.html" class="solution-card">
+          <h3>Entender melhor meu mercado</h3>
+          <p>Tome decisões com mais confiança através de análises que revelam oportunidades, tendências e o comportamento dos seus clientes.</p>
+          <span class="solution-link">Saiba mais →</span>
+        </a>
+        <a href="pages/contato.html" class="solution-card">
+          <h3>Expandir meu negócio</h3>
+          <p>Planeje os próximos passos do crescimento da sua empresa com mais previsibilidade e menos riscos.</p>
+          <span class="solution-link">Saiba mais →</span>
+        </a>
+        <a href="pages/contato.html" class="solution-card">
+          <h3>Organizar meus processos</h3>
+          <p>Elimine gargalos, aumente a eficiência da operação e prepare sua empresa para crescer sem perder o controle.</p>
+          <span class="solution-link">Saiba mais →</span>
+        </a>
+        <a href="pages/contato.html" class="solution-card">
+          <h3>Tenho uma ideia e quero tirá-la do papel</h3>
+          <p>Conte com apoio estratégico para transformar sua ideia em um negócio estruturado e preparado para crescer.</p>
+          <span class="solution-link">Saiba mais →</span>
+        </a>
+    </div>
   </div>
 </section>
 <section class="section" id="parceiros">
