@@ -160,6 +160,14 @@
     .solution-link{color:var(--primary);font-weight:700;font-size:.95rem}
     @media(max-width:900px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:620px){.solutions-grid{grid-template-columns:1fr}}
+
+/* --- Emoji interativo nos cards --- */
+.card-emoji{display:inline-block;transition:transform .25s ease}
+.solution-card:hover .card-emoji{transform:scale(1.35) rotate(-8deg)}
+/* --- Botão voltar ao topo --- */
+.back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{background:var(--primary-dark);transform:translateY(-3px)}
 </style>
 </head>
 <body>
@@ -199,7 +207,6 @@
       <p class="lead">A Projetos Consultoria Integrada é a empresa júnior do CEUB e atua há 26 anos entregando soluções sob medida para empresas que querem evoluir.</p>
       <ul class="hero-list">
         <li><img src="assets/icons/seta-vermelha-icon.png" alt="">Consultoria Empresarial e Organizacional</li>
-        <li><img src="assets/icons/seta-vermelha-icon.png" alt="">Serviços de Marketing e T.I</li>
         <li><img src="assets/icons/seta-vermelha-icon.png" alt="">Engenharia e Arquitetura</li>
       </ul>
       <div class="hero-cta">
@@ -225,37 +232,37 @@
   <div class="container">
     <div class="head-block">
       <div class="eyebrow">Encontre a solução certa para você</div>
-      <h2>Qual desafio sua empresa precisa superar hoje?</h2>
+      <h2>Qual desafio sua empresa precisa superar hoje? </h2>
       <p class="lead">A PCI desenvolve estratégias personalizadas para transformar desafios em oportunidades e acelerar o crescimento do seu negócio.</p>
     </div>
     <div class="solutions-grid">
-        <a href="pages/contato.html" class="solution-card">
-          <h3>Estruturar minha empresa</h3>
+        <a href="pages/consultorias.html" class="solution-card">
+          <h3><span class="card-emoji">🏗️</span> Estruturar minha empresa</h3>
           <p>Organize processos, defina prioridades e construa uma base sólida para crescer de forma sustentável.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
-        <a href="pages/contato.html" class="solution-card">
-          <h3>Aumentar minhas vendas</h3>
+        <a href="pages/consultorias.html" class="solution-card">
+          <h3><span class="card-emoji">📈</span> Aumentar minhas vendas</h3>
           <p>Desenvolva estratégias comerciais e de marketing para atrair mais clientes e gerar resultados consistentes.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
-        <a href="pages/contato.html" class="solution-card">
-          <h3>Entender melhor meu mercado</h3>
+        <a href="pages/consultorias.html" class="solution-card">
+          <h3><span class="card-emoji">🔍</span> Entender melhor meu mercado</h3>
           <p>Tome decisões com mais confiança através de análises que revelam oportunidades, tendências e o comportamento dos seus clientes.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
-        <a href="pages/contato.html" class="solution-card">
-          <h3>Expandir meu negócio</h3>
+        <a href="pages/consultorias.html" class="solution-card">
+          <h3><span class="card-emoji">🚀</span> Expandir meu negócio</h3>
           <p>Planeje os próximos passos do crescimento da sua empresa com mais previsibilidade e menos riscos.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
-        <a href="pages/contato.html" class="solution-card">
-          <h3>Organizar meus processos</h3>
+        <a href="pages/consultorias.html" class="solution-card">
+          <h3><span class="card-emoji">⚙️</span> Organizar meus processos</h3>
           <p>Elimine gargalos, aumente a eficiência da operação e prepare sua empresa para crescer sem perder o controle.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
-        <a href="pages/contato.html" class="solution-card">
-          <h3>Tenho uma ideia e quero tirá-la do papel</h3>
+        <a href="pages/consultorias.html" class="solution-card">
+          <h3><span class="card-emoji">💡</span> Tenho uma ideia e quero tirá-la do papel</h3>
           <p>Conte com apoio estratégico para transformar sua ideia em um negócio estruturado e preparado para crescer.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
@@ -357,7 +364,6 @@
           <li><a href="./pages/sobre.html">Sobre</a></li>
           <li><a href="./pages/consultorias.html">Consultorias</a></li>
           <li><a href="./pages/arquitetura.html">Arquitetura</a></li>
-          <li><a href="./pages/portifolio.html">Portfólio</a></li>
           <li><a href="./pages/contato.html">Contato</a></li>
         </ul>
       </div>
@@ -367,6 +373,21 @@
     </div>
   </div>
 </footer>
+<button type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">&#9650;</button>
+<script>
+  (function(){
+    var btt = document.querySelector('.back-to-top');
+    if(btt){
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 400){ btt.classList.add('show'); }
+        else{ btt.classList.remove('show'); }
+      });
+      btt.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    }
+  })();
+</script>
 <script src="js/script.js"></script>
 <script>
   (function(){
