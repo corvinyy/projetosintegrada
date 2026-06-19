@@ -1,35 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Projetos Consultoria Integrada</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultorias - Projetos Consultoria Integrada</title>
+<meta name="description" content="Soluções de consultoria empresarial e organizacional da Projetos Consultoria Integrada (PCI): operações, estratégia, marketing, novos negócios, pesquisa de mercado e tecnologia.">
+<link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  /* ===== Header padronizado estilo econsult (PCI) ===== */
-  .pci-header{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(251,250,249,.96);backdrop-filter:blur(8px);border-bottom:1px solid #eee;font-family:"Maven Pro",system-ui,-apple-system,"Segoe UI",sans-serif}
-  .pci-container{max-width:1200px;margin:0 auto;padding:0 24px}
-  .pci-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px;position:relative}
-  .pci-logo-area{display:flex;align-items:center}
-  .pci-logo-area img{height:40px;width:auto}
-  .pci-nav-links{display:flex;align-items:center;gap:30px}
-  .pci-nav-links>a,.pci-servicos-btn{color:#171717;text-decoration:none;font-weight:600;font-size:.98rem;transition:.2s}
-  .pci-nav-links>a:hover{color:#940000}
-  .pci-dropdown{position:relative;display:inline-flex}
-  .pci-servicos-btn{background:none;border:none;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:0}
-  .pci-servicos-btn .pci-caret{transition:transform .25s;font-size:.75em}
-  .pci-dropdown.open .pci-servicos-btn{color:#940000}
-  .pci-dropdown.open .pci-servicos-btn .pci-caret{transform:rotate(180deg)}
-  .pci-servicos-menu{position:absolute;top:calc(100% + 16px);left:0;min-width:220px;background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
-  .pci-dropdown.open .pci-servicos-menu{display:flex;animation:pciMenuIn .2s ease}
-  @keyframes pciMenuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-  .pci-servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:#171717;text-decoration:none;transition:.18s}
-  .pci-servicos-menu a:hover{background:#f4f4f4;color:#940000;padding-left:18px}
-  .pci-cta{display:inline-flex;align-items:center;background:#940000;color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 24px;border-radius:10px;transition:.25s;border:2px solid #940000}
-  .pci-cta:hover{background:#7a0000;border-color:#7a0000}
-  .pci-menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:#940000}
+  :root{
+    --primary:#c40001;
+    --primary-dark:#9a0001;
+    --bg:#FBFAF9;
+    --muted:#f5f5f5;
+    --text:#171717;
+    --text-soft:rgba(23,23,23,.7);
+    --border:#e7e5e4;
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Maven Pro",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+  h1,h2,h3{font-weight:800;line-height:1.12;letter-spacing:-.02em}
+  h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+  .section{padding:90px 0}
+  .section.alt{background:rgba(245,245,245,.5)}
+  .lead{color:var(--text-soft);font-size:1.05rem;max-width:640px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.25s;border:2px solid transparent}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--text);border-color:var(--border)}
+  .btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,250,249,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo-area{display:flex;align-items:center;gap:10px}
+  .logo-area img{height:46px;width:auto}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-weight:600;font-size:.95rem;color:var(--text-soft);transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--primary)}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem}
+  .hero{padding:150px 0 100px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:22px}
+  .hero h1 .hl{color:var(--primary)}
+  .hero .lead{margin-bottom:26px;font-size:1.12rem}
+  .hero-list{list-style:none;margin-bottom:32px;display:grid;gap:12px}
+  .hero-list li{display:flex;align-items:center;gap:12px;font-weight:600}
+  .hero-list li img{width:22px;height:auto}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-cta .btn img{width:18px;filter:brightness(0) invert(1)}
+  .hero-cta .btn-outline img{filter:none}
+  .hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#c40001,#5a0000);display:flex;align-items:center;justify-content:center;padding:30px}
+  .hero-img img{max-height:160px;width:auto}
+  .stats{background:var(--primary);color:#fff;padding:50px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;align-items:center}
+  .stats .num{font-size:2.2rem;font-weight:900;line-height:1}
+  .stats .lbl{font-size:.85rem;opacity:.9;margin-top:6px}
+  .stats .item:not(:last-child){border-right:1px solid rgba(255,255,255,.18)}
+  .stats .item.feature{font-size:1.15rem;font-weight:800;text-align:left;padding-right:10px}
+  .head-block{max-width:680px;margin-bottom:50px}
+  .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:center}
+  .partner{background:#fff;border:1px solid var(--border);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;padding:18px;transition:.2s}
+  .partner:hover{border-color:var(--primary);transform:translateY(-4px)}
+  .partner img{max-height:80px;max-width:100%;width:auto;object-fit:contain}
+  .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .case{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;transition:.25s;display:flex;gap:20px;align-items:flex-start}
+  .case:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+  .case img.logo{width:72px;height:72px;border-radius:12px;object-fit:contain;background:var(--muted);padding:6px;flex-shrink:0}
+  .case .quote{font-size:.98rem;color:var(--text);font-style:italic;margin-bottom:12px}
+  .case .author{font-weight:700;color:var(--primary);font-size:.92rem}
+  .cta-final{text-align:center;background:var(--primary);color:#fff;border-radius:20px;padding:70px 30px;margin:0 24px}
+  .cta-final h2{color:#fff;margin-bottom:16px}
+  .cta-final p{opacity:.92;max-width:560px;margin:0 auto 28px}
+  .cta-final .btn{background:#fff;color:var(--primary)}
+  .cta-final .btn:hover{background:rgba(255,255,255,.9)}
+  footer{background:#1a1a1a;color:#fff;padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1.2fr 1fr;gap:40px;margin-bottom:40px}
+  .foot-logo{height:60px;width:auto;margin-bottom:18px}
+  footer p,footer a,footer li{color:rgba(255,255,255,.75);font-size:.92rem}
+  footer h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;color:#fff}
+  footer ul{list-style:none}
+  footer li{margin-bottom:10px}
+  footer a:hover{color:var(--primary)}
+  .foot-contacts p{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+  .foot-contacts img{width:18px;filter:brightness(0) invert(1);opacity:.8;margin-top:3px;flex-shrink:0}
+  .foot-social{display:flex;gap:14px;margin-top:16px}
+  .foot-social img{width:26px;filter:brightness(0) invert(1)}.foot-social img.wpp-foot{filter:none;opacity:1}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.85rem}
+  .wpp-float{position:fixed;bottom:24px;right:24px;z-index:200}
+  .wpp-float img{width:62px;height:62px}
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .menu-toggle{display:block}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-img{order:-1;aspect-ratio:16/9}
+    .cases-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px 0}
+    .stats .item{border-right:none!important}
+    .stats .item.feature{text-align:center;grid-column:1/-1}
+    .partners-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr}
+    .section{padding:60px 0}
+  }
+
+  /* ===== Serviços dropdown (estilo econsult) ===== */
+  .nav-dropdown{position:relative;display:inline-flex}
+  .nav-servicos-btn{background:none;border:none;font:inherit;color:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:0}
+  .nav-servicos-btn .caret{transition:transform .25s;font-size:.75em}
+  .nav-dropdown.open .nav-servicos-btn .caret{transform:rotate(180deg)}
+  .nav-dropdown.open .nav-servicos-btn{color:var(--primary)}
+  .servicos-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
+  .nav-dropdown.open .servicos-menu{display:flex;animation:menuIn .2s ease}
+  @keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  .servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:var(--text);transition:.18s}
+  .servicos-menu a:hover{background:var(--muted);color:var(--primary);padding-left:18px}
   /* ===== WhatsApp interativo ===== */
   .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
   .wpp-float img{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
@@ -41,294 +132,246 @@
   .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
   @keyframes wppPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.85);opacity:0}}
   @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}
+  /* mobile nav */
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--primary)}
   @media(max-width:880px){
-    .pci-menu-toggle{display:block}
-    .pci-nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid #eee;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 16px;box-shadow:0 18px 40px rgba(0,0,0,.1);display:none}
-    .pci-nav-links.nav-open{display:flex}
-    .pci-nav-links>a,.pci-dropdown{width:100%;padding:12px 0;border-bottom:1px solid #eee}
-    .pci-dropdown{display:block}
-    .pci-servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
-    .pci-cta{display:none}
+    .menu-toggle{display:block}
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:0;padding:8px 20px 16px;box-shadow:0 18px 40px rgba(0,0,0,.1);display:none}
+    .nav-links.nav-open{display:flex}
+    .nav-links>a,.nav-dropdown{width:100%;padding:12px 0;border-bottom:1px solid var(--border)}
+    .nav-dropdown{display:block}
+    .servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
+    .nav-cta{display:none}
   }
-</style>
-</head>
 
-<body>  
-    <header class="pci-header">
-  <div class="pci-container pci-nav">
-    <a href="../index.html" class="pci-logo-area">
+    /* --- Stats 3 colunas --- */
+    .stats-grid-3{grid-template-columns:repeat(3,1fr)}
+    .stats-grid-3 .item.feature{grid-column:auto;text-align:left;font-size:1.15rem;line-height:1.3}
+    @media(max-width:900px){
+      .stats-grid-3{grid-template-columns:1fr}
+      .stats-grid-3 .item.feature{text-align:center}
+    }
+    /* --- Seção de soluções --- */
+    .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .solution-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .solution-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:var(--primary)}
+    .solution-card h3{font-size:1.18rem;font-weight:800;margin-bottom:12px}
+    .solution-card p{color:var(--text-soft);font-size:.97rem;line-height:1.55;flex:1;margin-bottom:18px}
+    .solution-link{color:var(--primary);font-weight:700;font-size:.95rem}
+    @media(max-width:900px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.solutions-grid{grid-template-columns:1fr}}
+
+/* --- Emoji interativo nos cards --- */
+.card-emoji{display:inline-block;transition:transform .25s ease}
+.solution-card:hover .card-emoji{transform:scale(1.35) rotate(-8deg)}
+/* --- Botão voltar ao topo --- */
+.back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{background:var(--primary-dark);transform:translateY(-3px)}
+</style>
+
+  <style>
+    .hero-service{padding:120px 0 70px;text-align:center}
+    .hero-service h1{font-size:clamp(2.2rem,5vw,3.4rem);max-width:14ch;margin:0 auto}
+    .hero-service .eyebrow{justify-content:center}
+    .hero-service .lead{margin:22px auto 0;text-align:center}
+    .hero-phrases{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;margin:28px 0 0;padding:0}
+    .hero-phrases li{color:var(--primary);font-weight:700;font-size:.98rem}
+    .hero-service .hero-cta{justify-content:center;margin-top:34px;display:flex}
+    .service-card{display:flex;flex-direction:column;align-items:flex-start}
+    .service-icon{width:46px;height:46px;object-fit:contain;margin-bottom:16px}
+    .service-card h3{font-size:1.12rem;margin-bottom:10px}
+    @media(max-width:900px){.hero-service{padding:100px 0 50px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="logo-area">
       <img src="../assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
     </a>
-    <nav class="pci-nav-links">
+    <nav class="nav-links">
       <a href="../index.html">Início</a>
-                <a href="../pages/sobre.html">Sobre Nós</a>
-      <div class="pci-dropdown">
-        <button type="button" class="pci-servicos-btn" aria-expanded="false">Serviços <span class="pci-caret">&#9662;</span></button>
-        <div class="pci-servicos-menu">
-          <a href="../pages/consultorias.html">Consultorias</a>
-          <a href="../pages/arquitetura.html">Arquitetura</a>
+          <a href="sobre.html">Sobre Nós</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-servicos-btn" aria-expanded="false">Serviços <span class="caret">&#9662;</span></button>
+        <div class="servicos-menu">
+          <a href="consultorias.html" class="active">Consultorias</a>
+          <a href="arquitetura.html">Arquitetura</a>
         </div>
       </div>
-      <a href="../pages/parceiros.html">Parceiros</a>
-      <a href="../pages/portifolio.html">Cases</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="portifolio.html">Cases</a>
     </nav>
-    <a href="../pages/contato.html" class="pci-cta">Fale conosco</a>
-    <button class="pci-menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <a href="contato.html" class="btn btn-primary nav-cta">Fale conosco</a>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
   </div>
 </header>
 
-    <a href="#" class="scroll">
-        <span>&#8593;</span> 
-    </a>
-    
-    <div class="botao-wpp">
-        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
-      <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
-      <span class="wpp-pulse"></span>
-      <img src="../assets/logos/wpp-logo.png" alt="WhatsApp">
-    </a>
-    </div>
+<a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
+  <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
+  <span class="wpp-pulse"></span>
+  <img src="../assets/logos/wpp-logo.png" alt="WhatsApp">
+</a>
 
     <main>
-        <section id="serv-titulo">
-        
-            <h1>CONSULTORIAS</h1>
+      <section class="hero hero-service">
+        <div class="container">
+          <div class="eyebrow">Serviços · Consultoria</div>
+          <h1>Consultoria que faz seu negócio <span class="hl">crescer com estratégia</span></h1>
+          <p class="lead">Oferecemos soluções personalizadas para atender às necessidades do seu negócio, com qualidade, eficiência e foco em resultados.</p>
+          <ul class="hero-phrases">
+            <li>Estratégia, inovação e resultado.</li>
+            <li>Transformamos ideias em impacto!</li>
+            <li>Conectamos desafios a soluções.</li>
+          </ul>
+          <div class="hero-cta"><a href="contato.html" class="btn btn-primary">Entrar em contato</a></div>
+        </div>
+      </section>
 
-            <div class="serv-titulo-frase">
-                <p>
-                    Oferecemos soluções personalizadas 
-                    para atender às necessidades do seu negócio, 
-                    com qualidade, eficiência e foco em resultados.
-                </p>
-            </div>
+      <section id="solucoes" class="section">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">O que oferecemos</div>
+            <h2>Soluções de consultoria sob medida</h2>
+            <p class="lead">Da estruturação à expansão, conectamos cada desafio à solução certa para a sua empresa.</p>
+          </div>
+          <div class="solutions-grid">
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20opera%C3%A7%C3%B5es%20para%20melhorar%20processos%20e%20efici%C3%AAncia." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="../assets/icons/servicos/operacoes-icon.png" alt="OPERAÇÕES" width="40" height="40">
+          <h3>OPERAÇÕES</h3>
+          <p>Mensuração individual dos membros para melhorar impacto e produtividade; análise de fluxos para otimizar processos, reduzir custos e aumentar a eficiência.</p>
+          <span class="solution-link">Fale conosco →</span>
+        </a>
 
-            <div class="serv-frases">
-                <ul>
-                    <li class="frases-lista">
-                        <p>Estratégia, inovação e resultado.</p>
-                    </li>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20estrat%C3%A9gia%20e%20expans%C3%A3o%20para%20identificar%20novas%20oportunidades%20de%20crescimento." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="../assets/icons/servicos/estrategia-icon.png" alt="ESTRATÉGIA E EXPANSÃO" width="40" height="40">
+          <h3>ESTRATÉGIA E EXPANSÃO</h3>
+          <p>A partir de uma análise completa do negócio e do mercado, identificam-se oportunidades e direcionam-se ações para a obtenção de melhores resultados.</p>
+          <span class="solution-link">Fale conosco →</span>
+        </a>
 
-                    <li class="frases-lista">
-                        <p>Transformamos ideias em impacto!</p>
-                    </li>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20marketing%20e%20vendas%20para%20aprimorar%20o%20posicionamento%20e%20as%20estrat%C3%A9gias%20comerciais%20da%20minha%20empresa." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="../assets/icons/servicos/marketing-icon.png" alt="MARKETING E VENDAS" width="40" height="40">
+          <h3>MARKETING E VENDAS</h3>
+          <p>Posicionamento definido por produto, preço, praça e promoção, além do mapeamento dos processos comerciais para a identificação de gargalos.</p>
+          <span class="solution-link">Fale conosco →</span>
+        </a>
 
-                    <li class="frases-lista">
-                        <p>Conectamos desafios a soluções.</p>
-                    </li>
-                </ul>
-            </div>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20novos%20neg%C3%B3cios%20para%20estruturar%20processos%2C%20fun%C3%A7%C3%B5es%20e%20estrat%C3%A9gias%20de%20crescimento%20sustent%C3%A1vel." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="../assets/icons/servicos/negocios-icon.png" alt="NOVOS NEGÓCIOS" width="40" height="40">
+          <h3>NOVOS NEGÓCIOS</h3>
+          <p>Organização voltada para a estruturação de processos, funções e estratégias, garantindo uma atuação eficiente, escalável e sustentável.</p>
+          <span class="solution-link">Fale conosco →</span>
+        </a>
 
-            <div class="serv-titulo-frase">
-                <p><strong>Seu projeto, nossa próxima conquista.</strong> </p>
-            </div>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20pesquisa%20de%20mercado%20para%20entender%20melhor%20meu%20p%C3%BAblico%2C%20concorrentes%20e%20tend%C3%AAncias%20de%20consumo." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="../assets/icons/servicos/pesquisa-icon.png" alt="PESQUISA DE MERCADO" width="40" height="40">
+          <h3>PESQUISA DE MERCADO</h3>
+          <p>Coleta e análise de informações de mercado, como consumidores, concorrentes, tendências e hábitos de compras.</p>
+          <span class="solution-link">Fale conosco →</span>
+        </a>
 
-            <div class="botao-contato">
-                <a href="../pages/contato.html">ENTRAR EM CONTATO</a>
-            </div>
-        </section>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20tecnologia%20e%20inova%C3%A7%C3%B5es%20para%20melhorar%20a%20presen%C3%A7a%20digital%20e%20os%20resultados%20online%20da%20minha%20empresa." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="../assets/icons/servicos/ti-icon.png" alt="TECNOLOGIA E INOVAÇÕES" width="40" height="40">
+          <h3>TECNOLOGIA E INOVAÇÕES</h3>
+          <p>Formulação de E-Commerce, Landing Page ou Site Institucional.</p>
+          <span class="solution-link">Fale conosco →</span>
+        </a>
+          </div>
+        </div>
+      </section>
 
-        <section id=servicos>
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20opera%C3%A7%C3%B5es%20para%20melhorar%20processos%20e%20efici%C3%AAncia." target="_blank" class="servico">
-                <img class="icone-fundo" src="../assets/icons/servicos/operacoes-icon.png" alt="Serviço Icon" width="40px" height="40px">
-                <h3>OPERAÇÕES</h3>
-                <p>Mensuração individual dos membros para melhorar impacto e produtividade; análise de fluxos para otimizar processos, reduzir custos e aumentar a eficiência.</p>
-            </a>
-            
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20estrat%C3%A9gia%20e%20expans%C3%A3o%20para%20identificar%20novas%20oportunidades%20de%20crescimento." target="_blank" class="servico">
-                <img class="icone-fundo" src="../assets/icons/servicos/estrategia-icon.png" alt="Serviço Icon" width="40px" height="40px">
-                <h3>ESTRATÉGIA E EXPANSÃO</h3>
-                <p>A partir de uma análise completa do negócio e do mercado, identificam-se oportunidades e direcionam-se ações para a obtenção de melhores resultados.</p>
-            </a>
-
-            
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20marketing%20e%20vendas%20para%20aprimorar%20o%20posicionamento%20e%20as%20estrat%C3%A9gias%20comerciais%20da%20minha%20empresa." target="_blank" class="servico">
-                <img class="icone-fundo" src="../assets/icons/servicos/marketing-icon.png" alt="Serviço Icon" width="40px" height="40px">
-                <h3>MARKETING E VENDAS</h3>
-                <p>Posicionamento definido por produto, preço, praça e promoção, além do mapeamento dos processos comerciais para a identificação de gargalos.</p>
-            </a>
-
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20novos%20neg%C3%B3cios%20para%20estruturar%20processos%2C%20fun%C3%A7%C3%B5es%20e%20estrat%C3%A9gias%20de%20crescimento%20sustent%C3%A1vel." target="_blank" class="servico">
-                <img class="icone-fundo" src="../assets/icons/servicos/negocios-icon.png" alt="Serviço Icon" width="40px" height="40px">
-                <h3>NOVOS NEGÓCIOS</h3>
-                <p>Organização voltada para a estruturação de processos, funções e estratégias, garantindo uma atuação eficiente, escalável e sustentável.</p>
-            </a>
-
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20pesquisa%20de%20mercado%20para%20entender%20melhor%20meu%20p%C3%BAblico%2C%20concorrentes%20e%20tend%C3%AAncias%20de%20consumo." target="_blank" class="servico">
-                <img class="icone-fundo" src="../assets/icons/servicos/pesquisa-icon.png" alt="Serviço Icon" width="40px" height="40px">
-                <h3>PESQUISA DE MERCADO</h3>
-                <p>Coleta e análise de informações de mercado, como consumidores, concorrentes, tendências e hábitos de compras.</p>
-            </a>
-
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20tecnologia%20e%20inova%C3%A7%C3%B5es%20para%20melhorar%20a%20presen%C3%A7a%20digital%20e%20os%20resultados%20online%20da%20minha%20empresa." target="_blank" class="servico">
-                <img class="icone-fundo" src="../assets/icons/servicos/ti-icon.png" alt="Serviço Icon" width="40px" height="40px">
-                <h3>TECNOLOGIA E INOVAÇÕES</h3>
-                <p>Formulação de E-Commerce, Landing Page ou Site Institucional.</p>
-            </a>
-        </section>
-
-        <section id="depoimentos">
-            <h1 style="font-size: 22px;">DEPOIMENTOS</h1>
-
-            <div class="depo-lista">
-                <ul>
-                    <a href="https://aguasclarasmidia.com.br/" target="_blank">
-                        <li class="depo-item">
-                            <img src="../assets/logos/depoimentos/aguas-claras-midia.png" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "Fizeram um trabalho de
-                                    excelência, foi absolutamente
-                                    sensacional...
-                                    O retorno foi imenso."
-                                </p>
-                                <span>Patrícia - Águas Claras Mídias</span>
-                            </div>
-                        </li>
-                    </a>
-
-                    <a href="">
-                        <li class="depo-item" target="_blank">
-                            <img src="../assets/logos/depoimentos/dg.png" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "A equipe foi muito cuidadosa
-                                    com as minhas necessidades.
-                                    A logomarca ficou do jeito que
-                                    eu queria."
-                                </p>
-                                <span>Erian - Distribuidora Gama</span>
-                            </div>
-                        </li>
-                    </a>
-                </ul>
-            </div>
-
-            <div class="depo-lista">
-                <ul>
-                    <a href="">
-                        <li class="depo-item">
-                            <img src="../assets/logos/depoimentos/ronald.png" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "A PCI teve um super trabalho tanto em termos de qualidade como de carinho. 
-                                    A empresa abraçou todas as nossas necessidades mesmo com várias mudanças o tempo todo!"
-                                </p>
-                                <span>Ronald</span>
-                            </div>
-                        </li>
-                    </a>
-
-                    <a href="https://www.instagram.com/advocatta/" target="_blank">
-                        <li class="depo-item" target="_blank">
-                            <img src="../assets/logos/depoimentos/advocatta.jpeg" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "A equipe foi extremamente solicita, entendeu 
-                                    todas as nossas exigências e fez um projeto adequado 
-                                    à nossa realidade!! Recomendaria mil vezes, um parabéns 
-                                    enorme para todos!"
-                                </p>
-                                <span> Sofia Mustafá - AdvocattA</span>
-                            </div>
-                        </li>
-                    </a>
-                </ul>
-            </div>
-
-            <div class="botao-contato">
-                <a href="../pages/contato.html">ENTRAR EM CONTATO</a>
-            </div>
-        </section>
+      <section id="contato" class="section alt">
+        <div class="container">
+          <div class="cta-final">
+            <h2>Deseja alavancar seus resultados?</h2>
+            <p>Fale diretamente com nossa equipe. Vamos entender o momento da sua empresa e indicar a melhor solução.</p>
+            <a href="contato.html" class="btn btn-primary">Entrar em contato →</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-info">
-            <div class="footer-esquerda">
-                <img src="../assets/logos/PCI-logo-escrita-branca.png" alt="Logo da Empresa" class="footer-logo-PCI">
-                <div class="footer-contatos">
-                    <p><img src="../assets/icons/email-icon.png" alt="Email">negocios@projetosintegrada.com.br</p>
-                    <p><img src="../assets/icons/telefone-icon.png" alt="Telefone">(61) 99853-8516</p>
-                </div>
-            </div>
-
-            <div class="footer-meio">
-                <div class="footer-hora-local">
-                    <p><img src="../assets/icons/relogio-icon.png" alt="Horário">De segunda a sexta das 09h às 18h.</p>
-                    <p><img src="../assets/icons/pin-icon.png" alt="Localização">SEPN 707/907, Ceub - Asa Norte, Bloco 2, Sala 2311 CEP: 70790-075</p>
-                </div>
-
-                <div class="footer-redes-sociais">
-                    <a href="https://www.instagram.com/projetosintegrada/">
-                        <img src="../assets/icons/instagram-icon.png" alt="Instagram">
-                    </a>
-                    <a href="mailto:negocios@projetosintegrada.com.br">
-                        <img src="../assets/icons/email-icon.png" alt="Email">
-                    </a>
-                    <a href="https://www.linkedin.com/company/projetosintegrada/">
-                        <img src="../assets/icons/linkedin-icon.png" alt="LinkedIn">
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-direita">
-                <ul>
-                    <li>
-                        <a href="../index.html">Início</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/sobre.html">Sobre</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/consultorias.html">Consultorias</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/arquitetura.html">Arquitetura</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/portifolio.html">Portfólio</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/contato.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="../assets/logos/PCI-logo-escrita-branca.png" alt="Projetos Consultoria Integrada">
+        <div class="foot-contacts">
+          <p><img src="../assets/icons/email-icon.png" alt="Email">negocios@projetosintegrada.com.br</p>
+          <p><img src="../assets/icons/telefone-icon.png" alt="Telefone">(61) 99853-8516</p>
         </div>
-
-        <div class="copyright">
-            <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/projetosintegrada/" target="_blank"><img src="../assets/icons/instagram-icon.png" alt="Instagram"></a>
+          <a href="mailto:negocios@projetosintegrada.com.br"><img src="../assets/icons/email-icon.png" alt="Email"></a>
+          <a href="https://www.linkedin.com/company/projetosintegrada/" target="_blank"><img src="../assets/icons/linkedin-icon.png" alt="LinkedIn"></a>
+        
+          <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><img class="wpp-foot" src="../assets/icons/whatsapp-icon.png" alt="WhatsApp"></a></div>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <div class="foot-contacts">
+          <p><img src="../assets/icons/relogio-icon.png" alt="Horário"> Segunda a Sexta, das 09h às 18h.</p>
+          <p><img src="../assets/icons/pin-icon.png" alt="Localização">SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 — CEP: 70790-075</p>
         </div>
-    </footer>
-    
-    <script src="../js/script.js"></script>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="consultorias.html">Consultorias</a></li>
+          <li><a href="arquitetura.html">Arquitetura</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados. </p>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">&#9650;</button>
+<script>
+  (function(){
+    var btt = document.querySelector('.back-to-top');
+    if(btt){
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 400){ btt.classList.add('show'); }
+        else{ btt.classList.remove('show'); }
+      });
+      btt.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    }
+  })();
+</script>
+<script src="../js/script.js"></script>
 <script>
   (function(){
     document.addEventListener('click', function(e){
-      var btn = e.target.closest('.pci-servicos-btn');
-      var drop = document.querySelector('.pci-dropdown');
+      var btn = e.target.closest('.nav-servicos-btn');
+      var drop = document.querySelector('.nav-dropdown');
       if(btn && drop){
         var open = drop.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         e.preventDefault();
         return;
       }
-      if(drop && !e.target.closest('.pci-dropdown')){
+      if(drop && !e.target.closest('.nav-dropdown')){
         drop.classList.remove('open');
-        var b = drop.querySelector('.pci-servicos-btn');
+        var b = drop.querySelector('.nav-servicos-btn');
         if(b) b.setAttribute('aria-expanded','false');
       }
-      var tgl = e.target.closest('.pci-menu-toggle');
+      var tgl = e.target.closest('.menu-toggle');
       if(tgl){
-        var nav = document.querySelector('.pci-nav-links');
+        var nav = document.querySelector('.nav-links');
         if(nav) nav.classList.toggle('nav-open');
       }
     });
   })();
 </script>
 </body>
-
-          </html>
+</html>
