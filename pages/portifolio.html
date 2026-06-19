@@ -1,376 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio - Projetos Consultoria Integrada</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cases - Projetos Consultoria Integrada</title>
+<link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  /* ===== Header padronizado estilo econsult (PCI) ===== */
-  .pci-header{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(251,250,249,.96);backdrop-filter:blur(8px);border-bottom:1px solid #eee;font-family:"Maven Pro",system-ui,-apple-system,"Segoe UI",sans-serif}
-  .pci-container{max-width:1200px;margin:0 auto;padding:0 24px}
-  .pci-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px;position:relative}
-  .pci-logo-area{display:flex;align-items:center}
-  .pci-logo-area img{height:40px;width:auto}
-  .pci-nav-links{display:flex;align-items:center;gap:30px}
-  .pci-nav-links>a,.pci-servicos-btn{color:#171717;text-decoration:none;font-weight:600;font-size:.98rem;transition:.2s}
-  .pci-nav-links>a:hover{color:#940000}
-  .pci-dropdown{position:relative;display:inline-flex}
-  .pci-servicos-btn{background:none;border:none;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:0}
-  .pci-servicos-btn .pci-caret{transition:transform .25s;font-size:.75em}
-  .pci-dropdown.open .pci-servicos-btn{color:#940000}
-  .pci-dropdown.open .pci-servicos-btn .pci-caret{transform:rotate(180deg)}
-  .pci-servicos-menu{position:absolute;top:calc(100% + 16px);left:0;min-width:220px;background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
-  .pci-dropdown.open .pci-servicos-menu{display:flex;animation:pciMenuIn .2s ease}
-  @keyframes pciMenuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-  .pci-servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:#171717;text-decoration:none;transition:.18s}
-  .pci-servicos-menu a:hover{background:#f4f4f4;color:#940000;padding-left:18px}
-  .pci-cta{display:inline-flex;align-items:center;background:#940000;color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 24px;border-radius:10px;transition:.25s;border:2px solid #940000}
-  .pci-cta:hover{background:#7a0000;border-color:#7a0000}
-  .pci-menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:#940000}
-  /* ===== WhatsApp interativo ===== */
-  .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
-  .wpp-float img{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
-  .wpp-float::before{content:"";position:absolute;top:7px;left:12px;width:24px;height:14px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0));pointer-events:none}
-  .wpp-float:hover{transform:scale(1.1) rotate(-4deg);box-shadow:0 14px 32px rgba(18,140,126,.6),inset 0 2px 4px rgba(255,255,255,.4)}
-  .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;animation:wppPulse 2s ease-out infinite;z-index:-1}
-  .wpp-tooltip{position:absolute;right:74px;background:#111;color:#fff;padding:9px 14px;border-radius:10px;font-size:.85rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(10px);transition:.25s;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-  .wpp-tooltip::after{content:"";position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:6px solid transparent;border-left-color:#111}
-  .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
-  @keyframes wppPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.85);opacity:0}}
-  @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}
-  @media(max-width:880px){
-    .pci-menu-toggle{display:block}
-    .pci-nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid #eee;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 16px;box-shadow:0 18px 40px rgba(0,0,0,.1);display:none}
-    .pci-nav-links.nav-open{display:flex}
-    .pci-nav-links>a,.pci-dropdown{width:100%;padding:12px 0;border-bottom:1px solid #eee}
-    .pci-dropdown{display:block}
-    .pci-servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
-    .pci-cta{display:none}
-  }
-</style>
-</head>
+:root{--primary:#c40001;--primary-dark:#9a0001;-h-bg:#FBFAF9;--muted:#f5f5f5;--text:#171717;--text-soft:rgba(23,23,23,.7);--border:#e7e5e4;--radius:14px;--maxw:1180px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Maven Pro",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.section{padding:90px 0}
+.lead{color:var(--text-soft);font-size:1.05rem;max-width:640px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,250,249,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo-area img{height:46px;width:auto}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-weight:600;font-size:.95rem;color:var(--text-soft);transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem}
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:center}
+.partner{background:#fff;border:1px solid var(--border);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;padding:18px;transition:.2s}
+.partner:hover{border-color:var(--primary);transform:translateY(-4px)}
+.partner img{max-height:80px;max-width:100%;width:auto;object-fit:contain}
+.head-block{max-width:680px;margin-bottom:50px}
+footer{background:#1a1a1a;color:#fff;padding:60px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1.2fr 1fr;gap:40px;margin-bottom:40px}
+.foot-logo{height:60px;width:auto;margin-bottom:18px}
+footer p,footer a,footer li{color:rgba(255,255,255,.75);font-size:.92rem}
+footer h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;color:#fff}
+footer ul{list-style:none}
+footer li{margin-bottom:10px}
+footer a:hover{color:var(--primary)}
+.foot-contacts p{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.foot-contacts img{width:18px;filter:brightness(0) invert(1);opacity:.8;margin-top:3px;flex-shrink:0}
+.foot-social{display:flex;gap:14px;margin-top:16px}
+.foot-social img{width:26px;filter:brightness(0) invert(1)}.foot-social img.wpp-foot{filter:none;opacity:1}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.85rem}
+.scroll{position:fixed;left:20px;bottom:20px;background-color:rgb(78,78,78);color:#fff;font-size:24px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,.1);transition:background-color .3s;z-index:10}
+.scroll:hover{background-color:var(--primary)}
+.wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b,#25D366 55%,#128C7E);box-shadow:0 10px 26px rgba(18,140,126,.45);border:2px solid rgba(255,255,255,.55);animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s}
+.wpp-float img{width:34px;height:34px;filter:brightness(0) invert(1)}
+.wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;animation:wppPulse 2s ease-out infinite;z-index:-1}
+.wpp-tooltip{position:absolute;right:74px;background:#111;color:#fff;padding:9px 14px;border-radius:10px;font-size:.85rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(10px);transition:.25s}
+.wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
+@keyframes wppPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.85);opacity:0}}
+@keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.nav-dropdown{position:relative;display:inline-flex}
+.nav-servicos-btn{background:none;border:none;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:0;font-size:.95rem;color:var(--text-soft)}
+.nav-servicos-btn .caret{transition:transform .25s;font-size:.75em}
+.nav-dropdown.open .nav-servicos-btn .caret{transform:rotate(180deg)}
+.nav-dropdown.open .nav-servicos-btn{color:var(--primary)}
+.servicos-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
+.nav-dropdown.open .servicos-menu{display:flex}
+.servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:var(--text);transition:.18s}
+.servicos-menu a:hover{background:var(--muted);color:var(--primary)}
+@media(max-width:900px){.nav-links{display:none}.menu-toggle{display:block}.partners-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr}.section{padding:60px 0}}
 
-<body>  
-    <header class="pci-header">
-  <div class="pci-container pci-nav">
-    <a href="../index.html" class="pci-logo-area">
-      <img src="../assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
-    </a>
-    <nav class="pci-nav-links">
-      <a href="../index.html">Início</a>
-                <a href="../pages/sobre.html">Sobre Nós</a>
-      <div class="pci-dropdown">
-        <button type="button" class="pci-servicos-btn" aria-expanded="false">Serviços <span class="pci-caret">&#9662;</span></button>
-        <div class="pci-servicos-menu">
-          <a href="../pages/consultorias.html">Consultorias</a>
-          <a href="../pages/arquitetura.html">Arquitetura</a>
+    /* Cases page */
+    .cases-hero{text-align:center;max-width:760px;margin:0 auto 50px}
+    .case-card{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:32px}
+    .case-card:nth-child(even){grid-template-columns:1.2fr 1fr}
+    .case-card:nth-child(even) .case-media{order:2}
+    .case-media img{width:100%;height:100%;min-height:260px;object-fit:cover}
+    .case-body{padding:34px 34px 34px 0}
+    .case-card:nth-child(even) .case-body{padding:34px 0 34px 34px}
+    .case-body h3{font-size:1.5rem;margin-bottom:16px;color:var(--primary)}
+    .case-body p{margin-bottom:12px;font-size:.97rem}
+    .case-body p b{color:var(--text)}
+    .case-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px}
+    .case-actions a{font-weight:600;font-size:.9rem;padding:10px 18px;border-radius:30px;transition:.2s}
+    .case-actions a.btn-fill{background:var(--primary);color:#fff}
+    .case-actions a.btn-fill:hover{background:var(--primary-dark)}
+    .case-actions a.btn-out{border:1px solid var(--border);color:var(--text)}
+    .case-actions a.btn-out:hover{border-color:var(--primary);color:var(--primary)}
+    .depo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+    .depo-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:.2s;height:100%}
+    .depo-card:hover{transform:translateY(-4px);border-color:var(--primary)}
+    .depo-card img{height:46px;width:auto;object-fit:contain}
+    .depo-card .depo-quote{font-size:.98rem;font-style:italic;color:var(--text-soft)}
+    .depo-card .depo-author{font-weight:700;font-size:.92rem;margin-top:auto}
+    @media(max-width:760px){.case-card,.case-card:nth-child(even){grid-template-columns:1fr}.case-card:nth-child(even) .case-media{order:0}.case-body,.case-card:nth-child(even) .case-body{padding:24px}.depo-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+<div class="container nav">
+  <a href="../index.html" class="logo-area"><img src="../assets/logos/PCI-logo-vermelha.png" alt="PCI Logo"></a>
+  <div class="nav-links">
+    <a href="../index.html">Início</a>
+    <a href="../pages/sobre.html">Sobre Nós</a>
+    <div class="nav-dropdown">
+      <button class="nav-servicos-btn" aria-expanded="false">Serviços <span class="caret">&#9662;</span></button>
+      <div class="servicos-menu">
+        <a href="../pages/consultorias.html">Consultorias</a>
+        <a href="../pages/arquitetura.html">Arquitetura</a>
+        <a href="../pages/portifolio.html">Portfólio</a>
+      </div>
+    </div>
+    <a href="../pages/parceiros.html">Parceiros</a>
+    <a href="../pages/portifolio.html" class="active">Cases</a>
+  </div>
+  <a href="../pages/contato.html" style="display:inline-flex;align-items:center;background:var(--primary);color:#fff;font-weight:700;font-size:.95rem;padding:12px 24px;border-radius:10px">Fale conosco</a>
+  <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+</div>
+</header>
+<a href="#" class="scroll"><span>&#8593;</span></a>
+<div class="botao-wpp">
+  <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
+    <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
+    <span class="wpp-pulse"></span>
+    <img src="../assets/logos/wpp-logo.png" alt="WhatsApp">
+  </a>
+</div>
+<div style="height:74px"></div>
+  <div style="height:74px"></div>
+  <main>
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="head-block cases-hero">
+          <div class="eyebrow">Cases de sucesso</div>
+          <h2>Projetos que <span style="color:var(--primary)">transformam</span></h2>
+          <p class="lead">Confira alguns dos projetos que realizamos, destacando a qualidade e o cuidado que dedicamos a cada trabalho.</p>
+          <div style="margin-top:24px"><a href="../pages/contato.html" style="display:inline-flex;align-items:center;background:var(--primary);color:#fff;padding:14px 30px;border-radius:30px;font-weight:600">Entrar em contato</a></div>
+        </div>
+      <div class="case-card">
+        <div class="case-media"><img src="../assets/imgs/portifolio/Yolo.jpg" alt="YOLO Coworking"></div>
+        <div class="case-body">
+          <h3>YOLO Coworking</h3>
+          <p><b>Desafio:</b> Transformar um espaço vazio e pouco aproveitado em um ambiente bonito e aconchegante.</p>
+          <p><b>Solução:</b> Desenvolvemos um anteprojeto do Coworking à beira do lago que combina inovação, bem-estar e colaboração, oferecendo um espaço multifuncional, moderno e confortável para trabalho em equipe, eventos e networking.</p>
+          <p><b>Resultado:</b> YOLO foi reconhecido pela revista BeerOrCoffee como o espaço mais bonito para trabalhar em Brasília.</p>
+          <div class="case-actions">
+            <a class="btn-fill" href="https://yolobsb.com.br/" target="_blank" rel="noopener">Visitar</a>
+            <a class="btn-out" href="https://drive.google.com/file/d/1ab_-LA1LROUkw8QACE4lCBM7iVCA95Nl/view?usp=sharing" target="_blank" rel="noopener">Nossa cartela</a>
+          </div>
         </div>
       </div>
-      <a href="../pages/parceiros.html">Parceiros</a>
-      <a href="../pages/portifolio.html">Cases</a>
-    </nav>
-    <a href="../pages/contato.html" class="pci-cta">Fale conosco</a>
-    <button class="pci-menu-toggle" aria-label="Abrir menu">&#9776;</button>
-  </div>
-</header>
-
-    <a href="#" class="scroll">
-        <span>&#8593;</span> 
-    </a>
-    
-    <div class="botao-wpp">
-        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
-      <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
-      <span class="wpp-pulse"></span>
-      <img src="../assets/logos/wpp-logo.png" alt="WhatsApp">
-    </a>
+      <div class="case-card">
+        <div class="case-media"><img src="../assets/imgs/portifolio/colorado.png" alt="Colorado Burguer"></div>
+        <div class="case-body">
+          <h3>Colorado Burguer</h3>
+          <p><b>Dificuldade:</b> Baixa notoriedade no mercado, pouca presença digital e delivery subutilizado, com redes sociais repetitivas e sem engajamento.</p>
+          <p><b>Solução:</b> Desenvolvemos um plano de marketing com foco em branding, reels, parcerias, promoções e expansão do delivery. Também reformulamos o cardápio e criamos ações de fidelização.</p>
+          <p><b>Resultado:</b> A marca ganhou visibilidade e alcançou um retorno sobre o investimento de 268%.</p>
+          <div class="case-actions">
+            <a class="btn-fill" href="https://coloradoburguer.com/colorado_burguer" target="_blank" rel="noopener">Visitar</a>
+            <a class="btn-out" href="https://drive.google.com/file/d/1ab_-LA1LROUkw8QACE4lCBM7iVCA95Nl/view?usp=sharing" target="_blank" rel="noopener">Nossa cartela</a>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-media"><img src="../assets/imgs/portifolio/bv.png" alt="BV Governança"></div>
+        <div class="case-body">
+          <h3>BV Governança</h3>
+          <p><b>Dificuldade:</b> A empresa enfrentava desorganização, baixa eficiência e falhas na comunicação interna, o que afetava o desempenho geral e a segurança das operações.</p>
+          <p><b>Solução:</b> A consultoria otimizou processos, implementou ferramentas digitais como Trello e Google Drive, e sugeriu a formalização de contratos e ampliação da equipe.</p>
+          <p><b>Resultado:</b> A empresa alcançou mais controle, agilidade e segurança, com um crescimento mais estruturado.</p>
+          <div class="case-actions">
+            <a class="btn-fill" href="https://bvgovernanca.com.br/" target="_blank" rel="noopener">Visitar</a>
+            <a class="btn-out" href="https://drive.google.com/file/d/1ab_-LA1LROUkw8QACE4lCBM7iVCA95Nl/view?usp=sharing" target="_blank" rel="noopener">Nossa cartela</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="section alt" id="depoimentos">
+      <div class="container">
+        <div class="head-block">
+          <div class="eyebrow">O que dizem sobre nós</div>
+          <h2>Depoimentos</h2>
+        </div>
+        <div class="depo-grid">
+        <a href="https://aguasclarasmidia.com.br/" target="_blank" rel="noopener"><div class="depo-card">
+          <img src="../assets/logos/depoimentos/aguas-claras-midia.png" alt="">
+          <p class="depo-quote">"Fizeram um trabalho de excelência, foi absolutamente sensacional... O retorno foi imenso."</p>
+          <span class="depo-author">Patrícia — Águas Claras Mídias</span>
+        </div></a>
+        <div class="depo-card">
+          <img src="../assets/logos/depoimentos/dg.png" alt="">
+          <p class="depo-quote">"A equipe foi muito cuidadosa com as minhas necessidades. A logomarca ficou do jeito que eu queria."</p>
+          <span class="depo-author">Erian — Distribuidora Gama</span>
+        </div>
+        <div class="depo-card">
+          <img src="../assets/logos/depoimentos/ronald.png" alt="">
+          <p class="depo-quote">"A PCI teve um super trabalho tanto em termos de qualidade como de carinho. A empresa abraçou todas as nossas necessidades mesmo com várias mudanças o tempo todo!"</p>
+          <span class="depo-author">Ronald</span>
+        </div>
+        <a href="https://www.instagram.com/advocatta/" target="_blank" rel="noopener"><div class="depo-card">
+          <img src="../assets/logos/depoimentos/advocatta.jpeg" alt="">
+          <p class="depo-quote">"A equipe foi extremamente solícita, entendeu todas as nossas exigências e fez um projeto adequado à nossa realidade!! Recomendaria mil vezes, um parabéns enorme para todos!"</p>
+          <span class="depo-author">Sofia Mustafá — AdvocattA</span>
+        </div></a>
+        </div>
+        <div style="text-align:center;margin-top:46px"><a href="../pages/contato.html" style="display:inline-flex;align-items:center;background:var(--primary);color:#fff;padding:14px 30px;border-radius:30px;font-weight:600">Entrar em contato</a></div>
+      </div>
+    </section>
+  </main>
+<footer>
+<div class="container">
+  <div class="foot-grid">
+    <div>
+      <img class="foot-logo" src="../assets/logos/PCI-logo-escrita-branca.png" alt="Projetos Consultoria Integrada">
+      <div class="foot-contacts">
+        <p><img src="../assets/icons/email-icon.png" alt="Email">negocios@projetosintegrada.com.br</p>
+        <p><img src="../assets/icons/telefone-icon.png" alt="Telefone">(61) 99853-8516</p>
+      </div>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/projetosintegrada/" target="_blank"><img src="../assets/icons/instagram-icon.png" alt="Instagram"></a>
+        <a href="mailto:negocios@projetosintegrada.com.br"><img src="../assets/icons/email-icon.png" alt="Email"></a>
+        <a href="https://www.linkedin.com/company/projetosintegrada/" target="_blank"><img src="../assets/icons/linkedin-icon.png" alt="LinkedIn"></a>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><img class="wpp-foot" src="../assets/icons/whatsapp-icon.png" alt="WhatsApp"></a>
+      </div>
     </div>
-
-    <main>
-        <section id="port-titulo">   
-            <h1>CASES DE SUCESSO</h1>
-            
-            <div>
-                <p>
-                    Confira alguns dos projetos que realizamos, 
-                    destacando a qualidade e o cuidado que dedicamos 
-                    a cada trabalho.
-                </p>
-            </div>
-
-            <div div class="botao-contato">
-                <a href="../pages/contato.html">ENTRAR EM CONTATO</a>
-            </div>
-        </section>
-
-
-        <section id="projetos">
-            <div class="proj-container">
-                <div class="proj-card">
-                    <div class="card-foto">
-                        <img src="../assets/imgs/portifolio/Yolo.jpg" alt="Yolo">
-                    </div>
-
-                    <h3>YOLO Coworking</h3>
-                    <p>
-                        <strong>Desafio:</strong> Transformar um espaço vazio e pouco
-                        aproveitado em um ambiente bonito e aconchegante.
-    
-                        <br><br>
-
-                        <strong>Solução:</strong> Desenvolvemos um anteprojeto do
-                        Coworking à beira do lago que combina inovação,
-                        bem-estar e colaboração, oferecendo um espaço
-                        multifuncional, moderno e confortável para trabalho
-                        em equipe, eventos e networking.
-
-                        <br><br>
-
-                        <strong>Resultado:</strong> YOLO foi reconhecido pela revista
-                        BeerOrCoffee como o espaço mais bonito para
-                        trabalhar em Brasília.
-                    </p>
-
-                    <div class="proj-botoes">
-                        <a href="https://yolobsb.com.br/" target="_blank">
-                            VISITAR
-                        </a>
-                        <a href="https://drive.google.com/file/d/1ab_-LA1LROUkw8QACE4lCBM7iVCA95Nl/view?usp=sharing" target="_blank">
-                            NOSSA CARTELA 
-                        </a>
-                    </div>
-                </div>
-
-                <div class="proj-card">
-                    <div class="card-foto">
-                        <img src="../assets/imgs/portifolio/colorado.png" alt="Screenshot Gerador de Senha">
-                    </div>
-
-                    <h3>COLORADO BURGUER</h3>
-                    <p>
-                        <strong>Dificuldade:</strong> Baixa notoriedade no mercado, 
-                        pouca presença digital e delivery 
-                        subutilizado, com redes sociais repetitivas e sem engajamento.
-
-                        <br><br>
-
-                        <strong>Solução:</strong> Desenvolvemos um plano de marketing
-                         com foco em branding, reels, parcerias, promoções e expansão 
-                         do delivery. Também reformulamos o cardápio e criamos ações 
-                         de fidelização.
-
-                        <br><br>
-
-                        <strong>Resultado:</strong> A marca ganhou visibilidade e alcançou um retorno sobre o investimento de 268%.
-                    </p>
-                    <div class="proj-botoes">
-                        <a href="https://coloradoburguer.com/colorado_burguer" target="_blank">
-                            VISITAR
-                        </a>
-                        <a href="https://drive.google.com/file/d/1ab_-LA1LROUkw8QACE4lCBM7iVCA95Nl/view?usp=sharing" target="_blank">
-                            NOSSA CARTELA
-                        </a>
-                    </div>
-                </div>
-
-                <div class="proj-card">
-                    <div class="card-foto">
-                        <img src="../assets/imgs/portifolio/bv.png" alt="Screenshot Gerador de Senha">
-                    </div>
-
-                    <h3>BVGOVERNANÇA</h3>
-                    <p>
-                        <strong>Dificuldade:</strong> A empresa enfrentava desorganização, 
-                        baixa eficiência e falhas na comunicação interna, o que afetava o 
-                        desempenho geral e a segurança das operações.
-
-                        <br><br>
-
-                        <strong>Solução:</strong>  A consultoria otimizou processos, implementou 
-                         digitais como Trello e Google Drive, e sugeriu a formalização de contratos 
-                         e ampliação da equipe.
-
-                        <br><br>
-
-                        <strong>Resultado:</strong> A empresa alcançou mais controle, agilidade e segurança, com um crescimento mais estruturado.
-                    </p>
-                    <div class="proj-botoes">
-                        <a href="https://bvgovernanca.com.br/" target="_blank">
-                            VISITAR
-                        </a>
-                        <a href="https://drive.google.com/file/d/1ab_-LA1LROUkw8QACE4lCBM7iVCA95Nl/view?usp=sharing" target="_blank">
-                            NOSSA CARTELA
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="depoimentos">
-            <h1>DEPOIMENTOS</h1>
-
-            <div class="depo-lista">
-                <ul>
-                    <a href="https://aguasclarasmidia.com.br/" target="_blank">
-                        <li class="depo-item">
-                            <img src="../assets/logos/depoimentos/aguas-claras-midia.png" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "Fizeram um trabalho de
-                                    excelência, foi absolutamente
-                                    sensacional...
-                                    O retorno foi imenso."
-                                </p>
-                                <span>Patrícia - Águas Claras Mídias</span>
-                            </div>
-                        </li>
-                    </a>
-
-                    <a href="">
-                        <li class="depo-item" target="_blank">
-                            <img src="../assets/logos/depoimentos/dg.png" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "A equipe foi muito cuidadosa
-                                    com as minhas necessidades.
-                                    A logomarca ficou do jeito que
-                                    eu queria."
-                                </p>
-                                <span>Erian - Distribuidora Gama</span>
-                            </div>
-                        </li>
-                    </a>
-                </ul>
-            </div>
-
-            <div class="depo-lista">
-                <ul>
-                    <a href="">
-                        <li class="depo-item">
-                            <img src="../assets/logos/depoimentos/ronald.png" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "A PCI teve um super trabalho tanto em termos de qualidade como de carinho. 
-                                    A empresa abraçou todas as nossas necessidades mesmo com várias mudanças o tempo todo!"
-                                </p>
-                                <span>Ronald</span>
-                            </div>
-                        </li>
-                    </a>
-
-                    <a href="https://www.instagram.com/advocatta/" target="_blank">
-                        <li class="depo-item" target="_blank">
-                            <img src="../assets/logos/depoimentos/advocatta.jpeg" alt="" width="120px" height="120px">
-                            <div class="depo-texto">
-                                <p>
-                                    "A equipe foi extremamente solicita, entendeu 
-                                    todas as nossas exigências e fez um projeto adequado 
-                                    à nossa realidade!! Recomendaria mil vezes, um parabéns 
-                                    enorme para todos!"
-                                </p>
-                                <span> Sofia Mustafá - AdvocattA</span>
-                            </div>
-                        </li>
-                    </a>
-                </ul>
-            </div>
-
-            <div class="botao-contato">
-                <a href="../pages/contato.html">ENTRAR EM CONTATO</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-info">
-            <div class="footer-esquerda">
-                <img src="../assets/logos/PCI-logo-escrita-branca.png" alt="Logo da Empresa" class="footer-logo-PCI">
-                <div class="footer-contatos">
-                    <p><img src="../assets/icons/email-icon.png" alt="Email">negocios@projetosintegrada.com.br</p>
-                    <p><img src="../assets/icons/telefone-icon.png" alt="Telefone">(61) 99853-8516</p>
-                </div>
-            </div>
-
-            <div class="footer-meio">
-                <div class="footer-hora-local">
-                    <p><img src="../assets/icons/relogio-icon.png" alt="Horário">De segunda a sexta das 09h às 18h.</p>
-                    <p><img src="../assets/icons/pin-icon.png" alt="Localização">SEPN 707/907, Ceub - Asa Norte, Bloco 2, Sala 2311 CEP: 70790-075</p>
-                </div>
-
-                <div class="footer-redes-sociais">
-                    <a href="https://www.instagram.com/projetosintegrada/">
-                        <img src="../assets/icons/instagram-icon.png" alt="Instagram">
-                    </a>
-                    <a href="mailto:negocios@projetosintegrada.com.br">
-                        <img src="../assets/icons/email-icon.png" alt="Email">
-                    </a>
-                    <a href="https://www.linkedin.com/company/projetosintegrada/">
-                        <img src="../assets/icons/linkedin-icon.png" alt="LinkedIn">
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-direita">
-                <ul>
-                    <li>
-                        <a href="../index.html">Início</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/sobre.html">Sobre</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/consultorias.html">Consultorias</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/arquitetura.html">Arquitetura</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/portifolio.html">Portfólio</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/contato.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    <script src="../js/script.js"></script>
+    <div>
+      <h4>Atendimento</h4>
+      <div class="foot-contacts">
+        <p><img src="../assets/icons/relogio-icon.png" alt="Horário"> Segunda a Sexta, das 14h às 18h.</p>
+        <p><img src="../assets/icons/pin-icon.png" alt="Localização">SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 — CEP: 70790-075</p>
+      </div>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../pages/sobre.html">Sobre</a></li>
+        <li><a href="../pages/consultorias.html">Consultorias</a></li>
+        <li><a href="../pages/arquitetura.html">Arquitetura</a></li>
+        <li><a href="../pages/portifolio.html">Portfólio</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom"><p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p></div>
+</div>
+</footer>
 <script>
-  (function(){
-    document.addEventListener('click', function(e){
-      var btn = e.target.closest('.pci-servicos-btn');
-      var drop = document.querySelector('.pci-dropdown');
-      if(btn && drop){
-        var open = drop.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        e.preventDefault();
-        return;
-      }
-      if(drop && !e.target.closest('.pci-dropdown')){
-        drop.classList.remove('open');
-        var b = drop.querySelector('.pci-servicos-btn');
-        if(b) b.setAttribute('aria-expanded','false');
-      }
-      var tgl = e.target.closest('.pci-menu-toggle');
-      if(tgl){
-        var nav = document.querySelector('.pci-nav-links');
-        if(nav) nav.classList.toggle('nav-open');
-      }
-    });
-  })();
+(function(){
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-servicos-btn');
+    var drop = document.querySelector('.nav-dropdown');
+    if(btn && drop){ var open = drop.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); e.preventDefault(); return; }
+    if(drop && !e.target.closest('.nav-dropdown')){ drop.classList.remove('open'); }
+    var tgl = e.target.closest('.menu-toggle');
+    if(tgl){ var nav = document.querySelector('.nav-links'); if(nav) nav.classList.toggle('nav-open'); }
+  });
+  document.querySelector('.scroll').addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
+})();
 </script>
 </body>
-
-                        </html>
+</html>
