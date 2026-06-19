@@ -89,10 +89,10 @@
   footer ul{list-style:none}
   footer li{margin-bottom:10px}
   footer a:hover{color:var(--primary)}
-  .foot-contacts p{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-  .foot-contacts img{width:18px;filter:brightness(0) invert(1);opacity:.8}
+  .foot-contacts p{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+  .foot-contacts img{width:18px;filter:brightness(0) invert(1);opacity:.8;margin-top:3px;flex-shrink:0}
   .foot-social{display:flex;gap:14px;margin-top:16px}
-  .foot-social img{width:26px;filter:brightness(0) invert(1)}
+  .foot-social img{width:26px;filter:brightness(0) invert(1)}.foot-social img.wpp-foot{filter:none;opacity:1}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.85rem}
   .wpp-float{position:fixed;bottom:24px;right:24px;z-index:200}
   .wpp-float img{width:62px;height:62px}
@@ -348,7 +348,7 @@
           <a href="mailto:negocios@projetosintegrada.com.br"><img src="assets/icons/email-icon.png" alt="Email"></a>
           <a href="https://www.linkedin.com/company/projetosintegrada/" target="_blank"><img src="assets/icons/linkedin-icon.png" alt="LinkedIn"></a>
         
-          <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><img src="assets/logos/wpp-logo.png" alt="WhatsApp"></a></div>
+          <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><img class="wpp-foot" src="assets/icons/whatsapp-icon.png" alt="WhatsApp"></a></div>
       </div>
       <div>
         <h4>Atendimento</h4>
