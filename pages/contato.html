@@ -32,7 +32,7 @@
   .pci-menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:#940000}
   /* ===== WhatsApp interativo ===== */
   .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
-  .wpp-float img{width:34px;height:34px;filter:brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+  .wpp-float img{width:100%;height:100%;object-fit:cover;border-radius:50%}
   .wpp-float::before{content:"";position:absolute;top:7px;left:12px;width:24px;height:14px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0));pointer-events:none}
   .wpp-float:hover{transform:scale(1.1) rotate(-4deg);box-shadow:0 14px 32px rgba(18,140,126,.6),inset 0 2px 4px rgba(255,255,255,.4)}
   .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;animation:wppPulse 2s ease-out infinite;z-index:-1}
