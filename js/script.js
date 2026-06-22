@@ -105,12 +105,31 @@ function irParaSlide(index) {
     mostrarSlide(index);
 }
 
-mostrarSlide(0);
-
-setInterval(proximoSlide, 6000);
+if (typeof slides !== 'undefined' && slides && slides.length) {
+    mostrarSlide(0);
+    setInterval(proximoSlide, 6000);
+}
 
 /* (GERAL) BOTAO VOLTAR AO TOPO */
-document.querySelector('.scroll').addEventListener('click', function (event) {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const scrollBtn = document.querySelector('.scroll');
+if (scrollBtn) {
+    scrollBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+/* (HOME) Hero photo carousel */
+(function () {
+    const heroSlides = document.querySelectorAll('#heroCarousel .hero-slide');
+    const heroDots = document.querySelectorAll('#heroCarousel .hero-dot');
+    if (!heroSlides.length) return;
+    let current = 0;
+    function showHero(n) {
+        heroSlides.forEach((s, x) => s.classList.toggle('active', x === n));
+        heroDots.forEach((d, x) => d.classList.toggle('active', x === n));
+        current = n;
+    }
+    heroDots.forEach((d, x) => d.addEventListener('click', () => showHero(x)));
+    setInterval(() => showHero((current + 1) % heroSlides.length), 5000);
+})();
