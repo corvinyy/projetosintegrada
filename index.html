@@ -168,6 +168,24 @@
 .back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
 .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
 .back-to-top:hover{background:var(--primary-dark);transform:translateY(-3px)}
+
+  .hero-img{position:relative}
+  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+  .hero-slide.active{opacity:1}
+  .hero-slide img{width:100%;height:100%;object-fit:cover;max-height:none}
+  .hero-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:8px;justify-content:center;z-index:2}
+  .hero-dot{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
+  .hero-dot.active{background:#fff}
+  .btn-whatsapp{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:600;border-radius:50px;text-decoration:none;box-shadow:0 6px 16px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s}
+  .btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(37,211,102,.45)}
+  .btn-whatsapp img{width:20px;height:20px}
+  #localizacao .map-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+  #localizacao .map-info h2{margin-bottom:12px}
+  #localizacao .map-info p{display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+  #localizacao .map-info p img{width:22px;height:22px;flex:none}
+  #localizacao .map-frame{border-radius:var(--radius,14px);overflow:hidden;aspect-ratio:16/9;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+  #localizacao .map-frame iframe{width:100%;height:100%;border:0}
+  @media(max-width:768px){#localizacao .map-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -187,9 +205,9 @@
         </div>
       </div>
       <a href="./pages/parceiros.html">Parceiros</a>
-      <a href="./pages/portifolio.html">Cases</a>
+      <a href="./pages/cases.html">Cases</a>
     </nav>
-    <a href="./pages/contato.html" class="btn btn-primary nav-cta">Fale conosco</a>
+    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Contact Us</a>
     <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
   </div>
 </header>
@@ -210,13 +228,20 @@
         <li><img src="assets/icons/seta-vermelha-icon.png" alt="">Engenharia e Arquitetura</li>
       </ul>
       <div class="hero-cta">
-        <a href="pages/contato.html" class="btn btn-primary"><img src="assets/icons/telefone-icon.png" alt="">Fale conosco</a>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary"><img src="assets/icons/telefone-icon.png" alt=""><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Contact Us</a>
         <a href="pages/consultorias.html" class="btn btn-outline"><img src="assets/icons/servicos/operacoes-icon.png" alt="">Consultorias</a>
         <a href="pages/arquitetura.html" class="btn btn-outline"><img src="assets/icons/servicos/arquitetonico-icon.png" alt="">Arquitetura</a>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="assets/logos/PCI-logo-escrita-branca.png" alt="Projetos Consultoria Integrada">
+    <div class="hero-img" id="heroCarousel">
+      <div class="hero-slide active"><img src="assets/imgs/previews/pv1.png" alt="Projeto PCI 1"></div>
+      <div class="hero-slide"><img src="assets/imgs/previews/pv2.png" alt="Projeto PCI 2"></div>
+      <div class="hero-slide"><img src="assets/imgs/previews/pv3.png" alt="Projeto PCI 3"></div>
+      <div class="hero-dots">
+        <button class="hero-dot active" aria-label="Slide 1"></button>
+        <button class="hero-dot" aria-label="Slide 2"></button>
+        <button class="hero-dot" aria-label="Slide 3"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -329,11 +354,24 @@
   <div class="cta-final">
     <h2>Deseja alavancar seus resultados?</h2>
     <p>Fale diretamente com nossa equipe. Vamos entender o momento da sua empresa e indicar a melhor solução estratégica.</p>
-    <a href="./pages/contato.html" class="btn">Entrar em contato →</a>
+    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn"><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Contact Us</a>
   </div>
 </section>
 </main>
 <a href="#" class="scroll"><span>&#8593;</span></a>
+<section class="section alt" id="localizacao">
+  <div class="container map-grid">
+    <div class="map-info">
+      <h2>Onde estamos</h2>
+      <p><img src="assets/icons/pin-icon.png" alt="" aria-hidden="true">
+        SEPN 707/907, CEUB &ndash; Asa Norte, Bloco 2, Sala 2311 &ndash; CEP 70790-075, Bras&iacute;lia/DF</p>
+    </div>
+    <div class="map-frame">
+      <iframe title="Localiza&ccedil;&atilde;o PCI" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=CEUB%20SEPN%20707/907%20Asa%20Norte%20Bras%C3%ADlia&output=embed"></iframe>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -364,7 +402,7 @@
           <li><a href="./pages/sobre.html">Sobre</a></li>
           <li><a href="./pages/consultorias.html">Consultorias</a></li>
           <li><a href="./pages/arquitetura.html">Arquitetura</a></li>
-          <li><a href="./pages/contato.html">Contato</a></li>
+          <li><a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener">Contato</a></li>
         </ul>
       </div>
     </div>
