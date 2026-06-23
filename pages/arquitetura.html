@@ -30,7 +30,7 @@
   .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
   h1,h2,h3{font-weight:800;line-height:1.12;letter-spacing:-.02em}
   h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
-  .section{padding:90px 0}
+  .section{padding:80px 0}
   .section.alt{background:rgba(245,245,245,.5)}
   .lead{color:var(--text-soft);font-size:1.05rem;max-width:640px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.25s;border:2px solid transparent}
@@ -123,7 +123,7 @@
   .servicos-menu a:hover{background:var(--muted);color:var(--primary);padding-left:18px}
   /* ===== WhatsApp interativo ===== */
   .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
-  .wpp-float img{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+  .wpp-float img,.wpp-float .wpp-float-icon{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
   .wpp-float::before{content:"";position:absolute;top:7px;left:12px;width:24px;height:14px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0));pointer-events:none}
   .wpp-float:hover{transform:scale(1.1) rotate(-4deg);box-shadow:0 14px 32px rgba(18,140,126,.6),inset 0 2px 4px rgba(255,255,255,.4)}
   .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;animation:wppPulse 2s ease-out infinite;z-index:-1}
@@ -207,7 +207,7 @@
       <a href="parceiros.html">Parceiros</a>
       <a href="cases.html">Cases</a>
     </nav>
-    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><img src="../assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Contact Us</a>
+    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><img src="../assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Entrar em contato</a>
     <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
   </div>
 </header>
@@ -215,7 +215,7 @@
 <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
   <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
   <span class="wpp-pulse"></span>
-  <img src="../assets/icons/whatsapp-icon.png" alt="WhatsApp">
+  <svg class="wpp-float-icon" viewBox="0 0 32 32" width="34" height="34" fill="#fff" aria-hidden="true" focusable="false"><path d="M16.04 4C9.93 4 4.98 8.95 4.98 15.06c0 1.95.51 3.86 1.49 5.55L4.9 27.2l6.74-1.54a11.05 11.05 0 0 0 4.4.92h.01c6.11 0 11.06-4.95 11.06-11.06C27.11 8.95 22.15 4 16.04 4Zm0 20.02h-.01c-1.39 0-2.76-.37-3.96-1.08l-.28-.17-2.95.67.7-2.87-.18-.29a8.86 8.86 0 0 1-1.37-4.95c0-4.92 4.01-8.93 8.94-8.93 2.39 0 4.63.93 6.32 2.62a8.86 8.86 0 0 1 2.61 6.32c0 4.93-4.01 8.95-8.92 8.95Zm5.06-6.69c-.27-.14-1.64-.81-1.89-.9-.25-.09-.44-.14-.62.14-.18.27-.71.9-.87 1.08-.16.18-.32.2-.59.07-.27-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.64-1.54-1.91-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.83.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.52-.32Z"/></svg>
 </a>
 
     <main>
@@ -284,7 +284,7 @@
           <div class="cta-final">
             <h2>Seu projeto, nossa próxima conquista.</h2>
             <p>Fale diretamente com nossa equipe e vamos transformar sua ideia em um projeto completo.</p>
-            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary">Entrar em contato →</a>
+            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary"><img src="../assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Entrar em contato</a>
           </div>
         </div>
       </section>
