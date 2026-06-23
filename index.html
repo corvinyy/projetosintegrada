@@ -56,7 +56,7 @@
   .hero-list li img{width:22px;height:auto}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-cta .btn img{width:18px;filter:brightness(0) invert(1)}
-  .cta-final .btn img{width:20px;height:20px;object-fit:contain;border-radius:4px}
+  .cta-final .btn img,.cta-final .btn .wa-ico{width:20px;height:20px;flex:none}
   .hero-cta .btn-outline img{filter:none}
   .hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#c40001,#5a0000);display:flex;align-items:center;justify-content:center;padding:30px}
   .hero-img img{max-height:160px;width:auto}
@@ -68,11 +68,12 @@
   .stats .item.feature{display:flex;flex-direction:column;gap:6px;text-align:left;padding-right:10px}
   .stats .item.feature .feature-title{font-size:1.15rem;font-weight:800;line-height:1.25}
   .stats .item.feature .feature-sub{font-size:.9rem;font-weight:600;opacity:.9}
+  .stats .stat-extra{margin-top:8px;font-size:.85rem;font-weight:600;opacity:.92;text-align:center}
   .head-block{max-width:680px;margin-bottom:44px}
   .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:center}
-  .partner{background:#fff;border:1px solid var(--border);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;padding:18px;transition:.2s}
-  .partner:hover{border-color:var(--primary);transform:translateY(-4px)}
-  .partner img{max-height:80px;max-width:100%;width:auto;object-fit:contain}
+  .partner{background:transparent;border:none;border-radius:0;min-height:130px;display:flex;align-items:center;justify-content:center;padding:10px;transition:transform .2s}
+  .partner:hover{transform:translateY(-4px) scale(1.04)}
+  .partner img{height:90px;max-width:100%;width:auto;object-fit:contain}
   .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
   .case{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;transition:.25s;display:flex;gap:20px;align-items:flex-start}
   .case:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
@@ -95,7 +96,9 @@
   .foot-contacts p{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
   .foot-contacts img{width:18px;filter:brightness(0) invert(1);opacity:.8;margin-top:3px;flex-shrink:0}
   .foot-social{display:flex;gap:14px;margin-top:16px}
-  .foot-social img{width:26px;filter:brightness(0) invert(1)}.foot-social img.wpp-foot{filter:none;opacity:1}
+  .foot-social img{width:26px;filter:brightness(0) invert(1) opacity(.6);transition:filter .2s}
+  .foot-social a:hover img{filter:brightness(0) invert(1) opacity(.85)}
+  .foot-social .wpp-foot-svg{width:26px;height:26px}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.85rem}
   .wpp-float{position:fixed;bottom:24px;right:24px;z-index:200}
   .wpp-float img{width:62px;height:62px}
@@ -166,6 +169,8 @@
 
 /* --- Emoji interativo nos cards --- */
 .card-emoji{display:inline-block;transition:transform .25s ease}
+  .card-svg{vertical-align:-6px;margin-right:4px}
+  .card-svg svg{display:inline-block}
 .solution-card:hover .card-emoji{transform:scale(1.35) rotate(-8deg)}
 /* --- Botão voltar ao topo --- */
 .back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
@@ -179,13 +184,14 @@
   .hero-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:8px;justify-content:center;z-index:2}
   .hero-dot{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
   .hero-dot.active{background:#fff}
-  .btn-whatsapp{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:600;border-radius:50px;text-decoration:none;box-shadow:0 6px 16px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s}
-  .btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(37,211,102,.45)}
-  .btn-whatsapp img{width:20px;height:20px}
+  .btn-whatsapp{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 6px 16px rgba(196,0,1,.30);transition:transform .2s,box-shadow .2s}
+  .btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(196,0,1,.40);background:var(--primary-dark)}
+  .btn-whatsapp img,.btn-whatsapp .btn-ico,.btn-primary .btn-ico{width:18px;height:18px;flex:none}
   #localizacao .map-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
-  #localizacao .map-info h2{margin-bottom:12px}
-  #localizacao .map-info p{display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-  #localizacao .map-info p img{width:22px;height:22px;flex:none}
+  #localizacao .map-info{text-align:center}
+  .map-info h2{margin-bottom:12px}
+  #localizacao .map-info p{display:flex;align-items:flex-start;justify-content:center;gap:10px;line-height:1.5;text-align:left}
+  #localizacao .map-info p img{width:22px;height:22px;flex:none;filter:brightness(0)}
   #localizacao .map-frame{border-radius:var(--radius,14px);overflow:hidden;aspect-ratio:16/9;box-shadow:0 8px 24px rgba(0,0,0,.12)}
   #localizacao .map-frame iframe{width:100%;height:100%;border:0}
   @media(max-width:768px){#localizacao .map-grid{grid-template-columns:1fr}}
@@ -210,7 +216,7 @@
       <a href="./pages/parceiros.html">Parceiros</a>
       <a href="./pages/cases.html">Cases</a>
     </nav>
-    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Entrar em contato</a>
+    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.2 2.2Z"/></svg> Entrar em contato</a>
     <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
   </div>
 </header>
@@ -231,7 +237,7 @@
         <li><img src="assets/icons/seta-vermelha-icon.png" alt="">Engenharia e Arquitetura</li>
       </ul>
       <div class="hero-cta">
-        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary"><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Entrar em contato</a><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Entrar em contato</a>
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary"><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.2 2.2Z"/></svg> Entrar em contato</a>
         <a href="pages/consultorias.html" class="btn btn-outline"><img src="assets/icons/servicos/operacoes-icon.png" alt="">Consultorias</a>
         <a href="pages/arquitetura.html" class="btn btn-outline"><img src="assets/icons/servicos/arquitetonico-icon.png" alt="">Arquitetura</a>
       </div>
@@ -250,9 +256,9 @@
 </section>
 <section class="stats">
   <div class="container stats-grid stats-grid-3">
-    <div class="item feature"><span class="feature-title">Maior Empresa Júnior Integrada do Centro-Oeste</span><span class="feature-sub">+250 projetos executados desde 2018</span></div>
+    <div class="item feature"><span class="feature-title">Maior Empresa Júnior Integrada do Centro-Oeste</span></div>
     <div class="item"><div class="num">95%</div><div class="lbl">Satisfação dos clientes</div></div>
-    <div class="item"><div class="num">26</div><div class="lbl">Anos no mercado</div></div>
+    <div class="item"><div class="num">26</div><div class="lbl">Anos no mercado</div><div class="stat-extra">+250 projetos executados desde 2018</div></div>
   </div>
 </section>
 
@@ -265,32 +271,32 @@
     </div>
     <div class="solutions-grid">
         <a href="pages/consultorias.html" class="solution-card">
-          <h3><span class="card-emoji">🏗️</span> Estruturar minha empresa</h3>
+          <h3><span class="card-emoji card-svg"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c40001" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="1.5"/><path d="M3 8h18M8 3v14"/><path d="M15.5 14.5l3.5 3.5a1.5 1.5 0 0 0 2-2l-3.5-3.5a2.5 2.5 0 0 1-3-3l-2 2a2.5 2.5 0 0 1 3 3Z" fill="#c40001" stroke="none"/></svg></span> Estruturar minha empresa</h3>
           <p>Organize processos, defina prioridades e construa uma base sólida para crescer de forma sustentável.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
         <a href="pages/consultorias.html" class="solution-card">
-          <h3><span class="card-emoji">📈</span> Aumentar minhas vendas</h3>
+          <h3><span class="card-emoji card-svg"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c40001" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="5" y="13" width="3" height="6" fill="#c40001" stroke="none"/><rect x="10.5" y="9" width="3" height="10" fill="#c40001" stroke="none"/><rect x="16" y="5" width="3" height="14" fill="#c40001" stroke="none"/><path d="M5 11l5-4 3 2 5-5" stroke="#c40001"/><path d="M18 4h2v2"/></svg></span> Aumentar minhas vendas</h3>
           <p>Desenvolva estratégias comerciais e de marketing para atrair mais clientes e gerar resultados consistentes.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
         <a href="pages/consultorias.html" class="solution-card">
-          <h3><span class="card-emoji">🔍</span> Entender melhor meu mercado</h3>
+          <h3><span class="card-emoji card-svg"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c40001" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l4 4"/><path d="M8 10.5h5M10.5 8v5" /></svg></span> Entender melhor meu mercado</h3>
           <p>Tome decisões com mais confiança através de análises que revelam oportunidades, tendências e o comportamento dos seus clientes.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
         <a href="pages/consultorias.html" class="solution-card">
-          <h3><span class="card-emoji">🚀</span> Expandir meu negócio</h3>
+          <h3><span class="card-emoji card-svg"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c40001" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 1 5 4 5 8l-2 2H9l-2-2c0-4 2-7 5-8Z" fill="#c40001" stroke="none"/><circle cx="12" cy="9" r="1.6" fill="#fff" stroke="none"/><path d="M9 15l-2 4M15 15l2 4M12 15v5"/></svg></span> Expandir meu negócio</h3>
           <p>Planeje os próximos passos do crescimento da sua empresa com mais previsibilidade e menos riscos.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
         <a href="pages/consultorias.html" class="solution-card">
-          <h3><span class="card-emoji">⚙️</span> Organizar meus processos</h3>
+          <h3><span class="card-emoji card-svg"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c40001" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="10" r="3.2" fill="#c40001" stroke="none"/><circle cx="9" cy="10" r="1.2" fill="#fff" stroke="none"/><circle cx="16" cy="15" r="2.4" fill="#c40001" stroke="none"/><circle cx="16" cy="15" r="0.9" fill="#fff" stroke="none"/><path d="M9 5.5V4M9 16v-1.5M4.5 10H3M15 10h-1.5"/></svg></span> Organizar meus processos</h3>
           <p>Elimine gargalos, aumente a eficiência da operação e prepare sua empresa para crescer sem perder o controle.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
         <a href="pages/consultorias.html" class="solution-card">
-          <h3><span class="card-emoji">💡</span> Tenho uma ideia e quero tirá-la do papel</h3>
+          <h3><span class="card-emoji card-svg"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c40001" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.2V17h6v-1.3c0-.8.4-1.6 1-2.2A6 6 0 0 0 12 3Z" fill="#c40001" stroke="none"/><path d="M9.5 20h5M10 22h4" stroke="#c40001"/></svg></span> Tenho uma ideia e quero tirá-la do papel</h3>
           <p>Conte com apoio estratégico para transformar sua ideia em um negócio estruturado e preparado para crescer.</p>
           <span class="solution-link">Saiba mais →</span>
         </a>
@@ -357,7 +363,7 @@
   <div class="cta-final">
     <h2>Deseja alavancar seus resultados?</h2>
     <p>Fale diretamente com nossa equipe. Vamos entender o momento da sua empresa e indicar a melhor solução estratégica.</p>
-    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn"><img src="assets/icons/whatsapp-icon.png" alt="" aria-hidden="true"> Entrar em contato</a>
+    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn"><svg class="wa-ico" viewBox="0 0 32 32" width="20" height="20" fill="#25D366" aria-hidden="true" focusable="false"><path d="M16.04 4C9.93 4 4.98 8.95 4.98 15.06c0 1.95.51 3.86 1.49 5.55L4.9 27.2l6.74-1.54a11.05 11.05 0 0 0 4.4.92h.01c6.11 0 11.06-4.95 11.06-11.06C27.11 8.95 22.15 4 16.04 4Zm0 20.02h-.01c-1.39 0-2.76-.37-3.96-1.08l-.28-.17-2.95.67.7-2.87-.18-.29a8.86 8.86 0 0 1-1.37-4.95c0-4.92 4.01-8.93 8.94-8.93 2.39 0 4.63.93 6.32 2.62a8.86 8.86 0 0 1 2.61 6.32c0 4.93-4.01 8.95-8.92 8.95Zm5.06-6.69c-.27-.14-1.64-.81-1.89-.9-.25-.09-.44-.14-.62.14-.18.27-.71.9-.87 1.08-.16.18-.32.2-.59.07-.27-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.64-1.54-1.91-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.83.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.52-.32Z"/></svg> Entrar em contato</a>
   </div>
 </section>
 </main>
@@ -365,7 +371,7 @@
 <section class="section alt" id="localizacao">
   <div class="container map-grid">
     <div class="map-info">
-      <h2>Onde estamos</h2>
+      <h2>Onde estamos localizados</h2>
       <p><img src="assets/icons/pin-icon.png" alt="" aria-hidden="true">
         SEPN 707/907, CEUB &ndash; Asa Norte, Bloco 2, Sala 2311 &ndash; CEP 70790-075, Bras&iacute;lia/DF</p>
     </div>
@@ -389,7 +395,7 @@
           <a href="mailto:negocios@projetosintegrada.com.br"><img src="assets/icons/email-icon.png" alt="Email"></a>
           <a href="https://www.linkedin.com/company/projetosintegrada/" target="_blank"><img src="assets/icons/linkedin-icon.png" alt="LinkedIn"></a>
         
-          <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><img class="wpp-foot" src="assets/icons/whatsapp-icon.png" alt="WhatsApp"></a></div>
+          <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><svg class="wpp-foot-svg" viewBox="0 0 32 32" width="26" height="26" fill="#25D366" aria-hidden="true" focusable="false"><path d="M16.04 4C9.93 4 4.98 8.95 4.98 15.06c0 1.95.51 3.86 1.49 5.55L4.9 27.2l6.74-1.54a11.05 11.05 0 0 0 4.4.92h.01c6.11 0 11.06-4.95 11.06-11.06C27.11 8.95 22.15 4 16.04 4Zm0 20.02h-.01c-1.39 0-2.76-.37-3.96-1.08l-.28-.17-2.95.67.7-2.87-.18-.29a8.86 8.86 0 0 1-1.37-4.95c0-4.92 4.01-8.93 8.94-8.93 2.39 0 4.63.93 6.32 2.62a8.86 8.86 0 0 1 2.61 6.32c0 4.93-4.01 8.95-8.92 8.95Zm5.06-6.69c-.27-.14-1.64-.81-1.89-.9-.25-.09-.44-.14-.62.14-.18.27-.71.9-.87 1.08-.16.18-.32.2-.59.07-.27-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.64-1.54-1.91-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.83.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.52-.32Z"/></svg></a></div>
       </div>
       <div>
         <h4>Atendimento</h4>
