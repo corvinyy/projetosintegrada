@@ -28,9 +28,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,250,2
 .nav-links a:hover,.nav-links a.active{color:var(--primary)}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem}
 .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:center}
-.partner{background:#fff;border:1px solid var(--border);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;padding:18px;transition:.2s}
-.partner:hover{border-color:var(--primary);transform:translateY(-4px)}
-.partner img{max-height:80px;max-width:100%;width:auto;object-fit:contain}
+.partner{background:transparent;border:none;border-radius:0;height:150px;display:flex;align-items:center;justify-content:center;padding:18px;transition:transform .2s}
+.partner:hover{transform:translateY(-4px) scale(1.04)}
+.partner img{height:120px;max-width:100%;width:auto;object-fit:contain}
 .head-block{max-width:680px;margin-bottom:50px}
 footer{background:#1a1a1a;color:#fff;padding:60px 0 30px}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1.2fr 1fr;gap:40px;margin-bottom:40px}
@@ -48,7 +48,7 @@ footer a:hover{color:var(--primary)}
 .scroll{position:fixed;left:20px;bottom:20px;background-color:rgb(78,78,78);color:#fff;font-size:24px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,.1);transition:background-color .3s;z-index:10}
 .scroll:hover{background-color:var(--primary)}
 .wpp-float{position:fixed;bottom:24px;right:24px;z-index:200}
-.wpp-float img{width:62px;height:62px}
+.wpp-float .wpp-float-svg{width:64px;height:64px;filter:drop-shadow(0 6px 14px rgba(37,211,102,.45)) drop-shadow(0 0 22px rgba(37,211,102,.30));border-radius:50%}
 .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;animation:wppPulse 2s ease-out infinite;z-index:-1}
 .wpp-tooltip{position:absolute;right:74px;background:#111;color:#fff;padding:9px 14px;border-radius:10px;font-size:.85rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(10px);transition:.25s}
 .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
@@ -96,7 +96,7 @@ footer a:hover{color:var(--primary)}
   <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
     <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
     <span class="wpp-pulse"></span>
-    <img src="../assets/icons/whatsapp-icon.png" alt="WhatsApp">
+    <svg class="wpp-float-svg" viewBox="0 0 100 100" width="64" height="64" aria-hidden="true"><defs><radialGradient id="wppGrad" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#5df07a"/><stop offset="55%" stop-color="#3fce63"/><stop offset="100%" stop-color="#1faa4b"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="url(#wppGrad)"/><path fill="#fff" d="M50 24c-14.4 0-26 11.6-26 26 0 4.6 1.2 9 3.5 12.9L24 76l13.6-3.6C41.3 74.7 45.6 76 50 76c14.4 0 26-11.6 26-26S64.4 24 50 24zm0 47.6c-3.9 0-7.7-1.1-11-3.1l-.8-.5-8.1 2.1 2.2-7.9-.5-.8c-2.2-3.5-3.4-7.5-3.4-11.7 0-12 9.7-21.7 21.7-21.7S71.7 38 71.7 50 62 71.6 50 71.6zm11.9-16.2c-.7-.3-3.9-1.9-4.5-2.1-.6-.2-1-.3-1.5.3-.4.7-1.6 2.1-2 2.5-.4.4-.7.5-1.4.2-.7-.3-2.8-1-5.3-3.3-2-1.7-3.3-3.9-3.7-4.6-.4-.7 0-1 .3-1.4.3-.3.7-.8 1-1.2.3-.4.4-.7.7-1.1.2-.4.1-.8 0-1.2-.2-.3-1.5-3.6-2-4.9-.5-1.3-1.1-1.1-1.5-1.1h-1.3c-.4 0-1.2.2-1.8.8-.6.7-2.4 2.3-2.4 5.6 0 3.3 2.4 6.5 2.7 6.9.3.4 4.7 7.2 11.4 10.1 1.6.7 2.8 1.1 3.8 1.4 1.6.5 3 .4 4.2.3 1.3-.2 3.9-1.6 4.5-3.2.6-1.5.6-2.9.4-3.2-.2-.3-.6-.4-1.3-.7z"/></svg>
   </a>
 </div>
 <div style="height:74px"></div>
