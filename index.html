@@ -157,6 +157,19 @@
       .stats-grid-3{grid-template-columns:1fr}
       .stats-grid-3 .item.feature{text-align:center}
     }
+    /* --- Stats 4 colunas --- */
+    .stats-grid-4{grid-template-columns:repeat(4,1fr)}
+    .stats-grid-4 .num{font-size:1.85rem}
+    .stats-grid-4 .lbl{font-size:.8rem}
+    .stats-grid-4 .item.feature{grid-column:auto;text-align:left}
+    .stats-grid-4 .item.feature .feature-title{font-size:1.02rem;line-height:1.25}
+    @media(max-width:900px){
+      .stats-grid-4{grid-template-columns:repeat(2,1fr);gap:30px 0}
+      .stats-grid-4 .item.feature{text-align:center;grid-column:1/-1}
+    }
+    @media(max-width:560px){
+      .stats-grid-4{grid-template-columns:1fr}
+    }
     /* --- Seção de soluções --- */
     .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .solution-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
@@ -255,10 +268,11 @@
   </div>
 </section>
 <section class="stats">
-  <div class="container stats-grid stats-grid-3">
+  <div class="container stats-grid stats-grid-4">
     <div class="item feature"><span class="feature-title">Maior Empresa Júnior Integrada do Centro-Oeste</span></div>
-    <div class="item"><div class="num">95%</div><div class="lbl">Satisfação dos clientes</div></div>
     <div class="item"><div class="num">+250</div><div class="lbl">projetos executados desde 2018</div></div>
+    <div class="item"><div class="num">+95%</div><div class="lbl">Satisfação dos clientes</div></div>
+    <div class="item"><div class="num">26</div><div class="lbl">anos de mercado</div></div>
   </div>
 </section>
 
