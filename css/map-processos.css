@@ -1,0 +1,319 @@
+/* ==========================================================================
+   PCI · TEMPLATE MASTER — styles-master.css
+   Estrutura: 1.Tokens 2.Reset 3.Base 4.Layout 5.Componentes 6.Seções 7.Media
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   1. TOKENS
+   ------------------------------------------------------------------------- */
+:root{
+  /* cor */
+  --paper:#FBFAF9;
+  --ink:#14171A;
+  --ink-soft:rgba(20,23,26,.62);
+  --ink-faint:rgba(20,23,26,.38);
+  --graphite:#1B1F24;
+  --graphite-soft:rgba(255,255,255,.68);
+  --red:#C40001;
+  --red-dark:#8F0001;
+  --line:#E4E0D8;
+  --tint:#F3F1EC;
+
+  /* tipografia */
+  --font-display:"Fraunces", Georgia, serif;
+  --font-body:"Maven Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* layout */
+  --maxw:1200px;
+  --maxw-narrow:760px;
+  --radius:12px;
+  --radius-sm:8px;
+  --gap:24px;
+
+  /* movimento */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* -------------------------------------------------------------------------
+   2. RESET
+   ------------------------------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+img,svg{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+ol,ul{list-style:none}
+
+/* -------------------------------------------------------------------------
+   3. BASE
+   ------------------------------------------------------------------------- */
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-.01em;
+  color:var(--ink);
+}
+h1{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:600}
+h1 em{font-style:italic;color:var(--red)}
+h2{font-size:clamp(1.7rem,3vw,2.5rem)}
+h3{font-size:1.15rem;font-weight:700;font-family:var(--font-body)}
+p{color:var(--ink-soft)}
+
+.skip-link{
+  position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
+  padding:12px 18px;z-index:1000;border-radius:0 0 8px 0;
+}
+.skip-link:focus{left:0}
+
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* -------------------------------------------------------------------------
+   4. LAYOUT
+   ------------------------------------------------------------------------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.wrap--narrow{max-width:var(--maxw-narrow)}
+.section{padding:96px 0}
+.section--tint{background:var(--tint)}
+.section--editorial{padding:110px 0}
+
+.section-index{
+  font-family:var(--font-display);
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  color:var(--red);
+  margin-bottom:14px;
+}
+.section-head{max-width:640px;margin-bottom:52px}
+.section-head p{margin-top:14px;font-size:1.02rem}
+.eyebrow{
+  font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--red);margin-bottom:18px;
+}
+
+/* -------------------------------------------------------------------------
+   5. COMPONENTES REUTILIZÁVEIS
+   ------------------------------------------------------------------------- */
+
+/* botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 28px;border-radius:var(--radius-sm);font-weight:700;font-size:.96rem;
+  border:1.5px solid transparent;cursor:pointer;transition:transform .2s var(--ease),background .2s,border-color .2s;
+}
+.btn-primary{background:var(--red);color:#fff}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-sm{padding:11px 20px;font-size:.86rem}
+
+/* cards genéricos */
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(20,23,26,.06)}
+
+/* faq (reutilizável em qualquer página) */
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{
+  width:100%;background:none;border:none;text-align:left;padding:22px 4px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  font-weight:700;font-size:1.02rem;cursor:pointer;
+}
+.faq-icon{position:relative;width:16px;height:16px;flex:none}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--red);transition:transform .25s var(--ease)}
+.faq-icon::before{top:50%;left:0;right:0;height:2px;transform:translateY(-1px)}
+.faq-icon::after{left:50%;top:0;bottom:0;width:2px;transform:translateX(-1px)}
+.faq-item.is-open .faq-icon::after{transform:translateX(-1px) rotate(90deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
+.faq-answer p{padding:0 4px 22px;font-size:.96rem}
+
+/* timeline (reutilizável — só faz sentido pra sequência real) */
+.timeline{position:relative;display:grid;gap:0;border-left:1.5px solid var(--line);margin-left:8px}
+.timeline-step{position:relative;padding:0 0 44px 40px}
+.timeline-step:last-child{padding-bottom:0}
+.timeline-num{
+  position:absolute;left:-8px;top:0;transform:translateX(-50%);
+  width:15px;height:15px;border-radius:50%;background:var(--paper);
+  border:2px solid var(--red);
+}
+.timeline-num{font-size:0} /* mostra só o marcador; número vem no texto abaixo pra leitores de tela */
+.timeline-step h3{margin-bottom:6px}
+.timeline-step p{max-width:480px}
+.timeline-step::before{
+  content:attr(data-order);
+}
+
+/* stat / deliverable / challenge / case cards */
+.stat-card,.deliverable-card,.challenge-card,.case-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
+}
+.stat-figure{font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:var(--ink);margin-bottom:10px}
+.challenge-icon{width:34px;height:34px;color:var(--red);margin-bottom:16px}
+.challenge-card h3{margin-bottom:8px}
+.case-card{font-size:1.02rem}
+.case-card p{color:var(--ink);font-style:italic;margin-bottom:14px}
+.case-card cite{font-style:normal;font-weight:700;color:var(--red);font-size:.9rem}
+
+/* faixa de CTA (reutilizável no meio de qualquer seção) */
+.cta-band{
+  background:var(--red);color:#fff;border-radius:var(--radius);
+  padding:38px 44px;display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;margin-top:64px;
+}
+.cta-band h3{color:#fff;font-family:var(--font-display);font-size:1.35rem;font-weight:600}
+.cta-band p{color:rgba(255,255,255,.85);margin-top:4px;font-size:.92rem}
+.cta-band .btn-ghost{border-color:#fff;color:#fff;white-space:nowrap}
+.cta-band .btn-ghost:hover{background:#fff;color:var(--red)}
+
+/* botão flutuante de whatsapp (fixo, sempre visível) */
+.wpp-float{
+  position:fixed;bottom:24px;right:24px;z-index:900;
+  display:flex;align-items:center;justify-content:center;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);
+  box-shadow:0 10px 26px rgba(18,140,126,.4);border:2px solid #fff;
+  transition:transform .2s var(--ease);
+}
+.wpp-float:hover{transform:scale(1.08)}
+.wpp-float svg{width:28px;height:28px}
+
+/* -------------------------------------------------------------------------
+   6. SEÇÕES ESPECÍFICAS
+   ------------------------------------------------------------------------- */
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:500;background:rgba(251,250,249,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:28px;height:76px}
+.brand{font-family:var(--font-display);font-weight:700;font-size:1.15rem;white-space:nowrap}
+.brand span{color:var(--red);font-weight:400;font-style:italic;margin-left:4px}
+.main-nav{display:flex;gap:26px;margin-right:auto;margin-left:40px}
+.main-nav a{font-size:.92rem;font-weight:600;color:var(--ink-soft);transition:color .2s}
+.main-nav a:hover{color:var(--red)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{width:22px;height:2px;background:var(--ink)}
+
+/* hero */
+.hero{padding:70px 0 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-sub{font-size:1.08rem;max-width:480px;margin:20px 0 26px}
+.benefit-list{display:grid;gap:11px;margin-bottom:34px}
+.benefit-list li{position:relative;padding-left:26px;font-weight:600;font-size:.96rem}
+.benefit-list li::before{content:"";position:absolute;left:0;top:8px;width:14px;height:2px;background:var(--red)}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-visual{padding:20px 0}
+.diagram-hero{width:100%;height:auto}
+.diagram-caption{font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:.08em;fill:var(--ink-faint)}
+
+.hero-indicators{
+  display:flex;gap:48px;flex-wrap:wrap;
+  padding:28px 36px;margin-top:56px;
+  background:var(--tint);border:1px solid var(--line);border-radius:var(--radius);
+  font-size:.92rem;color:var(--ink-soft);
+}
+.hero-indicators strong{font-family:var(--font-display);color:var(--red);font-size:1.8rem;font-weight:700;margin-right:4px}
+
+/* desafios (grid assimétrico) */
+.challenge-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-auto-rows:1fr;gap:var(--gap)}
+.challenge-card--lg{grid-row:span 2;display:flex;flex-direction:column;justify-content:center;background:var(--graphite);color:#fff;border-color:var(--graphite)}
+.challenge-card--lg h3,.challenge-card--lg p{color:#fff}
+.challenge-card--lg p{opacity:.75}
+.challenge-card--lg .challenge-icon{color:var(--red)}
+
+/* editorial */
+.editorial-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.editorial-lead{font-size:1.15rem;color:var(--ink);margin:16px 0 22px}
+.pull-quote{
+  font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--ink);
+  border-left:2px solid var(--red);padding-left:22px;margin:22px 0;line-height:1.4;
+}
+.editorial-visual{display:flex;justify-content:center}
+.diagram-editorial{width:80%;max-width:320px}
+
+/* stats */
+.stat-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--gap)}
+.stat-card--lg{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stat-card--lg p{color:rgba(255,255,255,.75)}
+.stat-card--lg .stat-figure{color:#fff}
+
+/* entregáveis */
+.deliverable-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+
+/* casos */
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+
+/* cta final */
+.cta-final{background:var(--graphite);color:#fff;padding:96px 0}
+.cta-final h2{color:#fff}
+.cta-final p{color:var(--graphite-soft);margin-top:14px;font-size:1.02rem}
+.cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.cta-form{display:grid;gap:16px}
+.cta-field label{display:block;font-size:.82rem;font-weight:700;margin-bottom:7px;color:var(--graphite-soft)}
+.cta-field input{
+  width:100%;padding:13px 14px;border-radius:var(--radius-sm);
+  border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;
+}
+.cta-field input::placeholder{color:rgba(255,255,255,.4)}
+.cta-field input:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+/* footer */
+.site-footer{padding:48px 0;border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:.88rem;color:var(--ink-soft)}
+.brand--footer{margin-bottom:8px}
+.footer-copy{width:100%;padding-top:24px;border-top:1px solid var(--line);font-size:.8rem}
+
+/* scroll reveal (classe controlada via JS)
+   Progressive enhancement: por padrão, TUDO fica visível.
+   A animação de opacidade só é ativada se .js-ready existir no <html>,
+   o que só acontece se script-master.js carregar e rodar com sucesso.
+   Isso evita que a página fique em branco caso o JS falhe por qualquer motivo. */
+[data-reveal]{opacity:1;transform:none}
+html.js-ready [data-reveal]{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+html.js-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+
+/* -------------------------------------------------------------------------
+   7. MEDIA QUERIES
+   ------------------------------------------------------------------------- */
+@media (max-width:980px){
+  .hero-grid,.editorial-grid,.cta-grid{grid-template-columns:1fr}
+  .challenge-grid{grid-template-columns:1fr 1fr}
+  .challenge-card--lg{grid-row:auto;grid-column:1/-1}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .stat-card--lg{grid-column:1/-1}
+  .deliverable-grid{grid-template-columns:1fr 1fr}
+  .main-nav{display:none}
+  .nav-toggle{display:flex}
+  .main-nav.is-open{
+    display:flex;position:absolute;top:76px;left:0;right:0;background:var(--paper);
+    border-bottom:1px solid var(--line);flex-direction:column;padding:12px 28px 20px;gap:4px;
+  }
+  .main-nav.is-open a{padding:10px 0;border-bottom:1px solid var(--line)}
+}
+
+@media (max-width:720px){
+  .section{padding:64px 0}
+  .challenge-grid,.stat-grid,.deliverable-grid,.case-grid{grid-template-columns:1fr}
+  .hero-indicators{gap:22px}
+  .footer-inner{flex-direction:column}
+}
