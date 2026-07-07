@@ -7,7 +7,7 @@ document.documentElement.classList.add("js-ready");
  */
 const PCI_CONFIG = {
   whatsappNumber: "5561998538516",
-  whatsappDefaultMessage: "Olá! Gostaria de agendar um diagnóstico sobre Mapeamento de Processos!"
+  whatsappDefaultMessage: "Olá! Gostaria de agendar um diagnóstico de mapeamento de processos."
 };
 
 /**
@@ -41,7 +41,11 @@ function initNavbar() {
   });
 }
 
-
+/**
+ * Scroll Reveal: revela elementos marcados com [data-reveal]
+ * conforme entram na viewport. Respeita prefers-reduced-motion
+ * mostrando tudo de uma vez, sem animação.
+ */
 function initScrollReveal() {
   const items = document.querySelectorAll("[data-reveal]");
   if (!items.length) return;
@@ -70,7 +74,10 @@ function initScrollReveal() {
   items.forEach((item) => observer.observe(item));
 }
 
-
+/**
+ * Contadores: anima os números de [data-counter] de 0 até o valor alvo
+ * quando o bloco de indicadores entra na viewport. Roda uma única vez.
+ */
 function initCounters() {
   const counters = document.querySelectorAll("[data-counter]");
   if (!counters.length) return;
@@ -167,12 +174,32 @@ function initLeadForm() {
 
     const nome = form.querySelector("#cta-nome")?.value.trim() || "";
     const whats = form.querySelector("#cta-whats")?.value.trim() || "";
-    const email = form.querySelector("#cta-email")?.value.trim() || "";
 
-    const message = `Olá! Meu nome é ${nome}. Meu Email é ${email}.${PCI_CONFIG.whatsappDefaultMessage}`;
+    const message = `Olá! Meu nome é ${nome}. Meu WhatsApp é ${whats}. ${PCI_CONFIG.whatsappDefaultMessage}`;
     const url = `https://wa.me/${PCI_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank", "noopener");
+  });
+}
+
+/**
+ * Botão voltar ao topo: aparece depois de rolar a página,
+ * some perto do topo, e faz scroll suave ao clicar.
+ */
+function initBackToTop() {
+  const btn = document.querySelector(".back-to-top");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
@@ -185,4 +212,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initCounters();
   initFAQ();
   initLeadForm();
+  initBackToTop();
 });
