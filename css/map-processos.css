@@ -1,14 +1,3 @@
-/* ==========================================================================
-   PCI · MAPEAMENTO DE PROCESSOS — map-processos.css
-   Baseado nos mesmos tokens e padrões visuais do site institucional da PCI
-   (mesmas variáveis, mesma fonte única Maven Pro, mesmos componentes de
-   botão/card/header/footer). Estrutura: 1.Tokens 2.Reset 3.Base 4.Layout
-   5.Componentes 6.Seções 7.Media
-   ========================================================================== */
-
-/* -------------------------------------------------------------------------
-   1. TOKENS — iguais ao site institucional
-   ------------------------------------------------------------------------- */
 :root{
   --primary:#c40001;
   --primary-dark:#9a0001;
