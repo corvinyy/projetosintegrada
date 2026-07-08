@@ -7,7 +7,7 @@ document.documentElement.classList.add("js-ready");
  */
 const PCI_CONFIG = {
   whatsappNumber: "5561998538516",
-  whatsappDefaultMessage: "Olá! Gostaria de agendar um diagnóstico de Mapeamento de Processos."
+  whatsappDefaultMessage: "Gostaria de agendar um diagnóstico de Mapeamento de Processos."
 };
 
 /**
