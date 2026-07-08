@@ -7,7 +7,7 @@
 <meta name="description" content="Diagnóstico, redesenho e padronização dos processos da sua empresa. PCI, há 26 anos de mercado, +250 projetos executados.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/map-processos.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 
 <header class="site-header" data-nav>
   <div class="wrap header-inner">
-    <a href="../index.html" class="logo-area">
+    <a href="./index.html" class="logo-area">
       <img src="../assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
     </a>
     <nav class="main-nav" aria-label="Navegação principal">
@@ -25,7 +25,10 @@
       <a href="#casos">Casos</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#contato" class="btn btn-primary btn-sm">Falar com um especialista</a>
+    <a href="#contato" class="btn btn-whatsapp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.2 2.2Z"/></svg>
+      Falar com um especialista
+    </a>
     <button class="nav-toggle" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -55,7 +58,7 @@
       <div class="hero-visual" data-reveal aria-hidden="true">
         <svg viewBox="0 0 560 480" class="diagram-hero">
           <!-- estado disperso -->
-          <g class="diagram-scatter" stroke="var(--ink)" stroke-width="1.2" fill="none" opacity=".55">
+          <g class="diagram-scatter" stroke="var(--text)" stroke-width="1.2" fill="none" opacity=".55">
             <circle cx="60" cy="70" r="7"/>
             <circle cx="150" cy="40" r="7"/>
             <circle cx="110" cy="140" r="7"/>
@@ -64,18 +67,18 @@
             <path d="M60 70 C90 100,80 30,150 40 C175 45,160 110,110 140 C150 165,190 120,210 95 C230 70,60 40,40 160" stroke-dasharray="3 5"/>
           </g>
           <!-- seta de transformação -->
-          <path d="M250 150 C300 175,300 260,250 285" stroke="var(--ink-faint)" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+          <path d="M250 150 C300 175,300 260,250 285" stroke="var(--text-soft)" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
           <defs>
             <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-              <path d="M0 0 L8 4 L0 8 Z" fill="var(--ink-faint)"/>
+              <path d="M0 0 L8 4 L0 8 Z" fill="var(--text-soft)"/>
             </marker>
           </defs>
           <!-- estado ordenado -->
-          <g class="diagram-grid" stroke="var(--ink)" stroke-width="1.4" fill="none">
+          <g class="diagram-grid" stroke="var(--text)" stroke-width="1.4" fill="none">
             <rect x="320" y="240" width="70" height="44" rx="3"/>
             <rect x="320" y="304" width="70" height="44" rx="3"/>
             <rect x="410" y="240" width="70" height="44" rx="3"/>
-            <rect x="410" y="304" width="70" height="44" rx="3" class="diagram-accent" stroke="none" fill="var(--red)"/>
+            <rect x="410" y="304" width="70" height="44" rx="3" class="diagram-accent" stroke="none" fill="var(--primary)"/>
             <path d="M390 262 H410 M390 326 H410 M445 284 V304"/>
           </g>
           <text x="320" y="400" class="diagram-caption">FLUXO PADRONIZADO</text>
@@ -83,11 +86,22 @@
         </svg>
       </div>
     </div>
+  </section>
 
-    <div class="wrap hero-indicators" data-reveal>
-      <span><strong data-counter="250">0</strong>+ projetos executados</span>
-      <span><strong data-counter="26">0</strong> anos de mercado</span>
-      <span><strong data-counter="95">0</strong>% satisfação dos clientes</span>
+  <section class="stats" aria-label="Indicadores da PCI">
+    <div class="wrap stats-grid stats-grid-3" data-reveal>
+      <div class="item">
+        <div class="num"><strong data-counter="250">0</strong>+</div>
+        <div class="lbl">projetos executados</div>
+      </div>
+      <div class="item">
+        <div class="num"><strong data-counter="26">0</strong></div>
+        <div class="lbl">anos de mercado</div>
+      </div>
+      <div class="item">
+        <div class="num"><strong data-counter="95">0</strong>%</div>
+        <div class="lbl">satisfação dos clientes</div>
+      </div>
     </div>
   </section>
 
@@ -137,14 +151,14 @@
       </div>
       <div class="editorial-visual" data-reveal aria-hidden="true">
         <svg viewBox="0 0 320 320" class="diagram-editorial">
-          <circle cx="160" cy="160" r="110" fill="none" stroke="var(--line)" stroke-width="1"/>
-          <circle cx="160" cy="160" r="75" fill="none" stroke="var(--line)" stroke-width="1"/>
-          <circle cx="160" cy="160" r="40" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
-          <circle cx="160" cy="160" r="5" fill="var(--red)"/>
-          <circle cx="160" cy="50" r="5" fill="var(--ink)"/>
-          <circle cx="256" cy="215" r="5" fill="var(--ink)"/>
-          <circle cx="64" cy="215" r="5" fill="var(--ink)"/>
-          <path d="M160 160 L160 50 M160 160 L256 215 M160 160 L64 215" stroke="var(--ink-faint)" stroke-width="1"/>
+          <circle cx="160" cy="160" r="110" fill="none" stroke="var(--border)" stroke-width="1"/>
+          <circle cx="160" cy="160" r="75" fill="none" stroke="var(--border)" stroke-width="1"/>
+          <circle cx="160" cy="160" r="40" fill="none" stroke="var(--text)" stroke-width="1.4"/>
+          <circle cx="160" cy="160" r="5" fill="var(--primary)"/>
+          <circle cx="160" cy="50" r="5" fill="var(--text)"/>
+          <circle cx="256" cy="215" r="5" fill="var(--text)"/>
+          <circle cx="64" cy="215" r="5" fill="var(--text)"/>
+          <path d="M160 160 L160 50 M160 160 L256 215 M160 160 L64 215" stroke="var(--text-soft)" stroke-width="1"/>
         </svg>
       </div>
     </div>
@@ -200,7 +214,7 @@
         <h2 id="resultados-title">Resultados esperados</h2>
       </div>
       <div class="stat-grid">
-        <article class="stat-card stat-card--lg" data-reveal>
+        <article class="stat-card" data-reveal>
           <p class="stat-figure">Escala</p>
           <p>Sua empresa entrega o mesmo nível de qualidade independente do volume ou de quem está executando.</p>
         </article>
@@ -356,10 +370,12 @@
   </div>
 </footer>
 
-<script src="../js/map-processos.js"></script>
+<button type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">&#9650;</button>
 
 <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Quero%20agendar%20um%20diagn%C3%B3stico%20de%20mapeamento%20de%20processos" target="_blank" rel="noopener" class="wpp-float" aria-label="Falar com a PCI no WhatsApp">
   <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16.04 4C9.93 4 4.98 8.95 4.98 15.06c0 1.95.51 3.86 1.49 5.55L4.9 27.2l6.74-1.54a11.05 11.05 0 0 0 4.4.92h.01c6.11 0 11.06-4.95 11.06-11.06C27.11 8.95 22.15 4 16.04 4Zm0 20.02h-.01c-1.39 0-2.76-.37-3.96-1.08l-.28-.17-2.95.67.7-2.87-.18-.29a8.86 8.86 0 0 1-1.37-4.95c0-4.92 4.01-8.93 8.94-8.93 2.39 0 4.63.93 6.32 2.62a8.86 8.86 0 0 1 2.61 6.32c0 4.93-4.01 8.95-8.92 8.95Zm5.06-6.69c-.27-.14-1.64-.81-1.89-.9-.25-.09-.44-.14-.62.14-.18.27-.71.9-.87 1.08-.16.18-.32.2-.59.07-.27-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.64-1.54-1.91-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.83.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.52-.32Z"/></svg>
 </a>
+
+<script src="../js/map-processos.js"></script>
 </body>
 </html>
