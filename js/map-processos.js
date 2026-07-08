@@ -7,7 +7,7 @@ document.documentElement.classList.add("js-ready");
  */
 const PCI_CONFIG = {
   whatsappNumber: "5561998538516",
-  whatsappDefaultMessage: "Olá! Gostaria de agendar um diagnóstico de mapeamento de processos."
+  whatsappDefaultMessage: "Olá! Gostaria de agendar um diagnóstico de Mapeamento de Processos."
 };
 
 /**
@@ -175,7 +175,7 @@ function initLeadForm() {
     const nome = form.querySelector("#cta-nome")?.value.trim() || "";
     const whats = form.querySelector("#cta-whats")?.value.trim() || "";
 
-    const message = `Olá! Meu nome é ${nome}. Meu WhatsApp é ${whats}. ${PCI_CONFIG.whatsappDefaultMessage}`;
+    const message = `Olá! Meu nome é ${nome}. ${PCI_CONFIG.whatsappDefaultMessage}`;
     const url = `https://wa.me/${PCI_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank", "noopener");
