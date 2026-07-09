@@ -13,7 +13,7 @@ Este repositório contém o código-fonte do site institucional da **Projetos Co
 ---
 
 *MODELO ATUAL*
-![Preview of the current progress](./assets/imgs/previews/modeatual.png)
+![Preview of the current progress](./assets/imgs/Captura de tela 2026-07-09 060149.png)
 `projeto desenvolvido para a Projetos Consultoria Integrada`
 
 ### 📁 Estrutura do Projeto
