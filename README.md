@@ -13,7 +13,9 @@ Este repositório contém o código-fonte do site institucional da **Projetos Co
 ---
 
 *MODELO ATUAL*
-![Preview of the current progress](./assets/imgs/Captura de tela 2026-07-09 060149.png)
+![Preview of the current progress](./assets/imgs/previews/pv4.png)
+
+
 `projeto desenvolvido para a Projetos Consultoria Integrada`
 
 ### 📁 Estrutura do Projeto
@@ -30,12 +32,13 @@ PCI-SITE/
 ├── js/
 │ └── script.js # Scripts JS do site
 ├── pages/ # Páginas internas do site
-│ ├── sobre.html
+│ ├── inicio.html
+│ ├── sobre nós.html
 │ ├── consultorias.html
 │ ├── arquitetura.html
 │ ├── parcerias.html
-│ └── contato.html
-├── index.html # Página inicial (Home)
+│ └── cases.html
+├── index.html # Página inicial (Início)
 └── CNAME
 └── README.md
 ```
@@ -89,13 +92,12 @@ PCI-SITE/
 ### 🧩 Páginas
 
 - Início: Apresentação da empresa e navegação principal
-- Sobre Nós: Informações sobre a história, MVV da PCI e diretores
+- Sobre Nós: Informações sobre a história, MVV e Diretoria
 - Serviços:
     ○ Consultoria: Lista de soluções de consultorias;
     ○ Arquitetura: Lista de soluções de arquitetura.
 - Parceiros: Lista de parceiros da PCI
 - Cases: Cases de sucesso e depoimentos
-- Contato: Formulário de contato, mapa e informações de comunicação e localização
 
 ---
 ### 💡 CURIOSIDADES
