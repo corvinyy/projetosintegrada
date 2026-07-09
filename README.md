@@ -14,9 +14,8 @@ Este repositório contém o código-fonte do site institucional da **Projetos Co
 
 
 
-*MODELO ATUAL*
-![Preview of the current progress](./assets/imgs/previews/pv4.png)
 
+![Preview of the current progress](./assets/imgs/previews/pv4.png)
 
 `projeto desenvolvido para a Projetos Consultoria Integrada`
 
