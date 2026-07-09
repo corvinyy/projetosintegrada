@@ -7,9 +7,12 @@ Este repositório contém o código-fonte do site institucional da **Projetos Co
 - **👤💻 [corvinyy (Lorena Araujo)](https://github.com/corvinyy)**
 - **👤💻 [Luis Moura](https://github.com/luismoura-10)**
 
+*MODELO ANTIGO*
 ![Preview of the current progress](./assets/imgs/previews/pv2.png)
 ![Preview of the current progress](./assets/imgs/previews/pv3.png)
 ---
+
+*MODELO NOVO*
 
 `projeto desenvolvido para a Projetos Consultoria Integrada`
 
