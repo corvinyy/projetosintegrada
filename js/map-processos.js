@@ -178,6 +178,11 @@ function initLeadForm() {
     const message = `Olá! Meu nome é ${nome}. ${PCI_CONFIG.whatsappDefaultMessage}`;
     const url = `https://wa.me/${PCI_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
+    // Conversão do Google Ads (Mapeamento de Processos)
+    if (typeof gtag === "function") {
+      gtag('event', 'conversion', {'send_to': 'AW-16481631509/5AjWCPfoxswcEJX6hrM9'});
+    }
+
     window.open(url, "_blank", "noopener");
   });
 }
