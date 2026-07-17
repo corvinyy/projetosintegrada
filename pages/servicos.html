@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultorias - Projetos Consultoria Integrada</title>
-<meta name="description" content="SoluÃ§Ãµes de consultoria empresarial e organizacional da Projetos Consultoria Integrada (PCI): OperaÃ§Ãµes, EstratÃ©gia e ExpansÃ£o, Marketing e Vendas, Novos NegÃ³cios e Pesquisa de mercado..">
+<meta name="description" content="Soluções de consultoria empresarial e organizacional da Projetos Consultoria Integrada (PCI): Operaçoes, Estratégia e Expansão, Marketing e Vendas, Novos Negócios e Pesquisa de mercado..">
 <link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,7 +122,7 @@
     .section{padding:60px 0}
   }
 
-  /* ===== ServiÃ§os dropdown  ===== */
+  /* ===== Serviços dropdown  ===== */
   .nav-dropdown{position:relative;display:inline-flex}
   .nav-servicos-btn{background:none;border:none;font:inherit;color:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:0}
   .nav-servicos-btn .caret{transition:transform .25s;font-size:.75em}
@@ -133,6 +133,7 @@
   @keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
   .servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:var(--text);transition:.18s}
   .servicos-menu a:hover{background:var(--muted);color:var(--primary);padding-left:18px}
+  
   /* ===== WhatsApp interativo ===== */
   .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
   .wpp-float img,.wpp-float .wpp-float-icon{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
@@ -144,6 +145,7 @@
   .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
   @keyframes wppPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.85);opacity:0}}
   @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}
+  
   /* mobile nav */
   .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--primary)}
   @media(max-width:880px){
@@ -163,7 +165,7 @@
       .stats-grid-3{grid-template-columns:1fr}
       .stats-grid-3 .item.feature{text-align:center}
     }
-    /* --- SeÃ§Ã£o de soluÃ§Ãµes --- */
+    /* --- Sessão de soluções --- */
     .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .solution-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
     .solution-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:var(--primary)}
@@ -176,7 +178,8 @@
 /* --- Emoji interativo nos cards --- */
 .card-emoji{display:inline-block;transition:transform .25s ease}
 .solution-card:hover .card-emoji{transform:scale(1.35) rotate(-8deg)}
-/* --- BotÃ£o voltar ao topo --- */
+  
+/* --- Botão voltar ao topo --- */
 .back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
 .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
 .back-to-top:hover{background:var(--primary-dark);transform:translateY(-3px)}
@@ -207,13 +210,13 @@
       <img src="../assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
     </a>
     <nav class="nav-links">
-      <a href="../index.html">InÃ­cio</a>
-          <a href="sobre.html">Sobre NÃ³s</a>
+      <a href="../index.html">Início</a>
+          <a href="sobre.html">Sobre Nós</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-servicos-btn" aria-expanded="false">ServiÃ§os <span class="caret">&#9662;</span></button>
+        <button type="button" class="nav-servicos-btn" aria-expanded="false">Serviços <span class="caret">&#9662;</span></button>
        <div class="servicos-menu">
         <a href="map-processos.html">Mapeamento de Processos</a>
-        <a href="pdn.html">Plano de NegÃ³cios</a>
+        <a href="pdn.html">Plano de Negócios</a>
         <a href="pdm.html">Plano de Marketing</a>
         <a href="fastcons.html">Fast Consulting</a>
         <a href="arquitetura.html">Arquitetura</a>
@@ -236,13 +239,13 @@
     <main>
       <section class="hero hero-service">
         <div class="container">
-          <div class="eyebrow">ServiÃ§os Â· Consultoria</div>
-          <h1>Consultoria que faz seu negÃ³cio <span class="hl">crescer com estratÃ©gia</span></h1>
-          <p class="lead">Oferecemos soluÃ§Ãµes personalizadas para atender Ã s necessidades do seu negÃ³cio, com qualidade, eficiÃªncia e foco em resultados.</p>
+          <div class="eyebrow">Serviços · Consultoria</div>
+          <h1>Consultoria que faz seu negócio <span class="hl">crescer com estratégia</span></h1>
+          <p class="lead">Oferecemos soluçoes personalizadas para atender as necessidades do seu negécio, com qualidade, eficiência e foco em resultados.</p>
           <ul class="hero-phrases">
-            <li>EstratÃ©gia, inovaÃ§Ã£o e resultado.</li>
+            <li>Estratégia, inovação e resultado.</li>
             <li>Transformamos ideias em impacto!</li>
-            <li>Conectamos desafios a soluÃ§Ãµes.</li>
+            <li>Conectamos desafios a soluções</li>
           </ul>
           <div class="hero-cta"><a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary">Entrar em contato</a></div>
         </div>
@@ -252,14 +255,14 @@
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">O que oferecemos</div>
-            <h2>SoluÃ§Ãµes de consultoria sob medida</h2>
-            <p class="lead">Da estruturaÃ§Ã£o Ã  expansÃ£o, conectamos cada desafio Ã  soluÃ§Ã£o certa para a sua empresa.</p>
+            <h2>Soluções de consultoria sob medida</h2>
+            <p class="lead">Da estruturação a expansão, conectamos cada desafio à solução certa para a sua empresa.</p>
           </div>
           <div class="solutions-grid">
         <a href="map-processos.html" target="_blank" class="solution-card service-card">
           <img class="service-icon" src="../assets/icons/servicos/operacoes-icon.png" alt="OPERAÃÃES" width="40" height="40">
-          <h3>OPERAÃÃES</h3>
-          <p>MensuraÃ§Ã£o individual dos membros para melhorar impacto e produtividade; anÃ¡lise de fluxos para otimizar processos, reduzir custos e aumentar a eficiÃªncia.</p>
+          <h3>OPERAÇÔES</h3>
+          <p>MensuraÃ§Ã£o individual dos membros para melhorar impacto e produtividade; análise de fluxos para otimizar processos, reduzir custos e aumentar a eficiÃªncia.</p>
           <span class="solution-link">Fale conosco â</span>
         </a>
 
