@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arquitetura - Projetos Consultoria Integrada</title>
-<meta name="description" content="SoluÃ§Ãµes de arquitetura e design de interiores da Projetos Consultoria Integrada (PCI): projeto arquitetÃ´nico, consultoria e design de interiores, reforma e paisagismo.">
+<meta name="description" content="Soluções de arquitetura e design de interiores da Projetos Consultoria Integrada (PCI): projeto arquitetônico, consultoria e design de interiores, reforma e paisagismo.">
 <link rel="icon" href="../assets/logos/PCI-logo-vermelha.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,7 +122,7 @@
     .section{padding:60px 0}
   }
 
-  /* ===== ServiÃ§os dropdown (estilo econsult) ===== */
+  /* ===== Serviços dropdown ===== */
   .nav-dropdown{position:relative;display:inline-flex}
   .nav-servicos-btn{background:none;border:none;font:inherit;color:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:0}
   .nav-servicos-btn .caret{transition:transform .25s;font-size:.75em}
@@ -133,6 +133,7 @@
   @keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
   .servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:var(--text);transition:.18s}
   .servicos-menu a:hover{background:var(--muted);color:var(--primary);padding-left:18px}
+  
   /* ===== WhatsApp interativo ===== */
   .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
   .wpp-float img,.wpp-float .wpp-float-icon{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
@@ -144,6 +145,7 @@
   .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
   @keyframes wppPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.85);opacity:0}}
   @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}
+  
   /* mobile nav */
   .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--primary)}
   @media(max-width:880px){
@@ -163,7 +165,8 @@
       .stats-grid-3{grid-template-columns:1fr}
       .stats-grid-3 .item.feature{text-align:center}
     }
-    /* --- SeÃ§Ã£o de soluÃ§Ãµes --- */
+  
+    /* --- Sessão de soluções --- */
     .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .solution-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
     .solution-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:var(--primary)}
@@ -176,7 +179,7 @@
 /* --- Emoji interativo nos cards --- */
 .card-emoji{display:inline-block;transition:transform .25s ease}
 .solution-card:hover .card-emoji{transform:scale(1.35) rotate(-8deg)}
-/* --- BotÃ£o voltar ao topo --- */
+/* --- Botão voltar ao topo --- */
 .back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
 .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
 .back-to-top:hover{background:var(--primary-dark);transform:translateY(-3px)}
@@ -207,14 +210,14 @@
       <img src="../assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
     </a>
     <nav class="nav-links">
-      <a href="../index.html">InÃ­cio</a>
-          <a href="sobre.html">Sobre NÃ³s</a>
+      <a href="../index.html">Início</a>
+          <a href="sobre.html">Sobre Nós</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-servicos-btn" aria-expanded="false">ServiÃ§os <span class="caret">&#9662;</span></button>
+        <button type="button" class="nav-servicos-btn" aria-expanded="false">Serviços <span class="caret">&#9662;</span></button>
         <div class="servicos-menu">
-          <!-- <a href="servicos.html">Todos os ServiÃ§os</a> -->
+          <!-- <a href="servicos.html">Todos os Serviços</a> -->
           <a href="map-processos.html">Mapeamento de Processos</a>
-          <a href="pdn.html">Plano de NegÃ³cios</a>
+          <a href="pdn.html">Plano de Negócios</a>
           <a href="pdm.html">Plano de Marketing</a>
           <a href="fastcons.html">Fast Consulting</a>
           <a href="arquitetura.html" class="active">Arquitetura</a>
@@ -237,13 +240,13 @@
     <main>
       <section class="hero hero-service">
         <div class="container">
-          <div class="eyebrow">ServiÃ§os Â· Arquitetura</div>
+          <div class="eyebrow">Serviços Â· Arquitetura</div>
           <h1>Arquitetura que transforma <span class="hl">ideias em impacto</span></h1>
-          <p class="lead">Oferecemos soluÃ§Ãµes personalizadas para atender Ã s necessidades do seu negÃ³cio, com qualidade, eficiÃªncia e foco em resultados.</p>
+          <p class="lead">Oferecemos soluções personalizadas para atender as necessidades do seu negócio, com qualidade, eficiência e foco em resultados.</p>
           <ul class="hero-phrases">
-            <li>EstratÃ©gia, inovaÃ§Ã£o e resultado.</li>
+            <li>Estratégia, inovação e resultado.</li>
             <li>Transformamos ideias em impacto!</li>
-            <li>Conectamos desafios a soluÃ§Ãµes.</li>
+            <li>Conectamos desafios a soluções.</li>
           </ul>
           <div class="hero-cta"><a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary">Entrar em contato</a></div>
         </div>
@@ -253,43 +256,43 @@
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">O que oferecemos</div>
-            <h2>SoluÃ§Ãµes de arquitetura e design</h2>
-            <p class="lead">Do projeto do zero ao paisagismo, cuidamos de cada etapa para entregar espaÃ§os funcionais e marcantes.</p>
+            <h2>Soluções de arquitetura e design</h2>
+            <p class="lead">Do projeto do zero ao paisagismo, cuidamos de cada etapa para entregar espaços funcionais e marcantes.</p>
           </div>
           <div class="solutions-grid">
         <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20projeto%20arquitet%C3%B4nico%20para%20desenvolver%20um%20novo%20projeto%20do%20zero." target="_blank" class="solution-card service-card">
-          <img class="service-icon" src="../assets/icons/servicos/arquitetonico-icon.png" alt="ARQUITETÃNICO" width="40" height="40">
-          <h3>ARQUITETÃNICO</h3>
-          <p>CriaÃ§Ã£o e desenvolvimento de projetos desde o zero, contemplando todas as etapas do processo construtivo, da concepÃ§Ã£o inicial ao detalhamento tÃ©cnico.</p>
-          <span class="solution-link">Fale conosco â</span>
+          <img class="service-icon" src="../assets/icons/servicos/arquitetonico-icon.png" alt="ARQUITETÔNICO" width="40" height="40">
+          <h3>ARQUITETÔNICO</h3>
+          <p>Criação e desenvolvimento de projetos desde o zero, contemplando todas as etapas do processo construtivo, da concepção inicial ao detalhamento técnico.</p>
+          <span class="solution-link">Fale conosco aqui</span>
         </a>
 
         <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20consultoria%20de%20interiores%20para%20melhorar%20a%20organiza%C3%A7%C3%A3o%20e%20funcionalidade%20do%20ambiente." target="_blank" class="solution-card service-card">
           <img class="service-icon" src="../assets/icons/servicos/consultoriadeinteriores-icon.png" alt="CONSULTORIA DE INTERIORES" width="40" height="40">
           <h3>CONSULTORIA DE INTERIORES</h3>
-          <p>AnÃ¡lise e orientaÃ§Ã£o para a reorganizaÃ§Ã£o ou renovaÃ§Ã£o de ambientes, buscando melhorias estÃ©ticas e funcionais por meio de pequenas intervenÃ§Ãµes e mudanÃ§as de layout.</p>
-          <span class="solution-link">Fale conosco â</span>
+          <p>Análise e orientação para a reorganização ou renovação de ambientes, buscando melhorias estéticas e funcionais por meio de pequenas intervenções e mudanças de layout.</p>
+          <span class="solution-link">Fale conosco aqui</span>
         </a>
 
         <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20design%20de%20interiores%20para%20desenvolver%20solu%C3%A7%C3%B5es%20personalizadas%20para%20meu%20ambiente." target="_blank" class="solution-card service-card">
           <img class="service-icon" src="../assets/icons/servicos/designdeinteriores-icon.png" alt="DESIGN DE INTERIORES" width="40" height="40">
           <h3>DESIGN DE INTERIORES</h3>
-          <p>Desenvolvimento de soluÃ§Ãµes detalhadas de mobiliÃ¡rio e acabamentos, com foco na ergonomia, estÃ©tica e identidade do espaÃ§o, garantindo funcionalidade e conforto aos usuÃ¡rios.</p>
-          <span class="solution-link">Fale conosco â</span>
+          <p>Desenvolvimento de soluções detalhadas de mobiliario e acabamentos, com foco na ergonomia, estética e identidade do espaço, garantindo funcionalidade e conforto aos usuários.</p>
+          <span class="solution-link">Fale conosco aqui</span>
         </a>
 
         <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20reforma%20de%20ambientes%20para%20melhorar%20a%20funcionalidade%20e%20est%C3%A9tica%20do%20local." target="_blank" class="solution-card service-card">
           <img class="service-icon" src="../assets/icons/servicos/reforma-icon.png" alt="REFORMA" width="40" height="40">
           <h3>REFORMA</h3>
-          <p>ExecuÃ§Ã£o e adequaÃ§Ã£o de ambientes jÃ¡ existentes, envolvendo alteraÃ§Ãµes estruturais como a subida e descida de paredes, com foco em melhorar a funcionalidade, o aproveitamento de espaÃ§o e a estÃ©tica do local.</p>
-          <span class="solution-link">Fale conosco â</span>
+          <p>Execução e adequação de ambientes já existentes, envolvendo alterações estruturais como a subida e descida de paredes, com foco em melhorar a funcionalidade, o aproveitamento de espaços e a esttética do local.</p>
+          <span class="solution-link">Fale conosco aqui</span>
         </a>
 
         <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20paisagismo%20para%20criar%20espa%C3%A7os%20verdes%20e%20integrar%20a%20natureza%20ao%20ambiente." target="_blank" class="solution-card service-card">
           <img class="service-icon" src="../assets/icons/servicos/paisagismo-icon.png" alt="PAISAGISMO" width="40" height="40">
           <h3>PAISAGISMO</h3>
-          <p>Planejamento e criaÃ§Ã£o de espaÃ§os verdes por meio da seleÃ§Ã£o e disposiÃ§Ã£o estratÃ©gica de plantas, priorizando bem-estar, harmonia visual e integraÃ§Ã£o entre o ambiente construÃ­do e a natureza.</p>
-          <span class="solution-link">Fale conosco â</span>
+          <p>Planejamento e criação de espaços verdes por meio da seleção e disposiçãoo estratégica de plantas, priorizando bem-estar, harmonia visual e integração entre o ambiente construido e a natureza.</p>
+          <span class="solution-link">Fale conosco aqui</span>
         </a>
           </div>
         </div>
@@ -298,7 +301,7 @@
       <section id="contato" class="section alt">
         <div class="container">
           <div class="cta-final">
-            <h2>Seu projeto, nossa prÃ³xima conquista.</h2>
+            <h2>Seu projeto, nossa próxima conquista.</h2>
             <p>Fale diretamente com nossa equipe e vamos transformar sua ideia em um projeto completo.</p>
             <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary"><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.2 2.2Z"/></svg> Entrar em contato</a>
           </div>
@@ -325,15 +328,15 @@
       <div>
         <h4>Atendimento</h4>
         <div class="foot-contacts">
-          <p><img src="../assets/icons/relogio-icon.png" alt="HorÃ¡rio"> Segunda a Sexta, das 09h Ã s 18h.</p>
-          <p><img src="../assets/icons/pin-icon.png" alt="LocalizaÃ§Ã£o"> SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 â CEP: 70790-075</p>
+          <p><img src="../assets/icons/relogio-icon.png" alt="Horário"> Segunda a Sexta, das 09h às 18h.</p>
+          <p><img src="../assets/icons/pin-icon.png" alt="Localização"> SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 - CEP: 70790-075</p>
         </div>
       </div>
       <div>
         <h4>Navegação</h4>
         <ul>
           <li><a href="../index.html">Início</a></li>
-          <li><a href="../pages/sobre.html">Sobre Nós³s</a></li>
+          <li><a href="../pages/sobre.html">Sobre Nóss</a></li>
           <li><a href="../pages/consultorias.html">Consultorias</a></li>
           <li><a href="../pages/arquitetura.html">Arquitetura</a></li>
           <li><a href="../pages/parceiros.html">Parceiros</a></li>
@@ -342,7 +345,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <p>Â© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
+      <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
     </div>
   </div>
 </footer>
