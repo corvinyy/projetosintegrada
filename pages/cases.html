@@ -247,21 +247,20 @@ box-shadow:0 10px 22px rgba(196,0,1,.42)
           <a href="https://www.instagram.com/projetosintegrada/" target="_blank"><img src="../assets/icons/instagram-icon.png" alt="Instagram"></a>
           <a href="mailto:negocios@projetosintegrada.com.br"><img src="../assets/icons/email-icon.png" alt="Email"></a>
           <a href="https://www.linkedin.com/company/projetosintegrada/" target="_blank"><span class="li-foot" role="img" aria-label="LinkedIn"></span></a>
-          <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank"><img class="wpp-foot" src="../assets/icons/whatsapp-icon.png" alt="WhatsApp"></a>
-        </div>
+         </div>
       </div>
       <div>
         <h4>Atendimento</h4>
         <div class="foot-contacts">
-          <p><img src="../assets/icons/relogio-icon.png" alt="HorÃ¡rio"> Segunda a Sexta, das 09h Ã s 18h.</p>
-          <p><img src="../assets/icons/pin-icon.png" alt="LocalizaÃ§Ã£o"> SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 â CEP: 70790-075</p>
+          <p><img src="../assets/icons/relogio-icon.png" alt="Horário"> Segunda a Sexta, das 09h às 18h.</p>
+          <p><img src="../assets/icons/pin-icon.png" alt="Localização"> SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 - CEP: 70790-075</p>
         </div>
       </div>
       <div>
-        <h4>NavegaÃ§Ã£o</h4>
+        <h4>Navegação</h4>
         <ul>
-          <li><a href="../index.html">InÃ­cio</a></li>
-          <li><a href="../pages/sobre.html">Sobre NÃ³s</a></li>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../pages/sobre.html">Sobre Nós</a></li>
           <li><a href="../pages/consultorias.html">Consultorias</a></li>
           <li><a href="../pages/arquitetura.html">Arquitetura</a></li>
           <li><a href="../pages/parceiros.html">Parceiros</a></li>
@@ -270,50 +269,29 @@ box-shadow:0 10px 22px rgba(196,0,1,.42)
       </div>
     </div>
     <div class="foot-bottom">
-      <p>Â© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
+      <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
     </div>
   </div>
 </footer>
-
-<button type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">&#9650;</button>
 <script>
-  (function(){
-    var btt = document.querySelector('.back-to-top');
-    if(btt){
-      window.addEventListener('scroll', function(){
-        if(window.scrollY > 400){ btt.classList.add('show'); }
-        else{ btt.classList.remove('show'); }
-      });
-      btt.addEventListener('click', function(){
-        window.scrollTo({top:0, behavior:'smooth'});
-      });
-    }
-  })();
-</script>
-<script src="../js/script.js"></script>
-<script>
-  (function(){
-    document.addEventListener('click', function(e){
-      var btn = e.target.closest('.nav-servicos-btn');
-      var drop = document.querySelector('.nav-dropdown');
-      if(btn && drop){
-        var open = drop.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        e.preventDefault();
-        return;
-      }
-      if(drop && !e.target.closest('.nav-dropdown')){
-        drop.classList.remove('open');
-        var b = drop.querySelector('.nav-servicos-btn');
-        if(b) b.setAttribute('aria-expanded','false');
-      }
-      var tgl = e.target.closest('.menu-toggle');
-      if(tgl){
-        var nav = document.querySelector('.nav-links');
-        if(nav) nav.classList.toggle('nav-open');
-      }
+(function(){
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-servicos-btn');
+    var drop = document.querySelector('.nav-dropdown');
+    if(btn && drop){ var open = drop.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); e.preventDefault(); return; }
+    if(drop && !e.target.closest('.nav-dropdown')){ drop.classList.remove('open'); }
+    var tgl = e.target.closest('.menu-toggle');
+    if(tgl){ var nav = document.querySelector('.nav-links'); if(nav) nav.classList.toggle('nav-open'); }
+  });
+  var backToTop = document.querySelector('.back-to-top');
+  if(backToTop){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 400){ backToTop.classList.add('show'); }
+      else{ backToTop.classList.remove('show'); }
     });
-  })();
+    backToTop.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  }
+})();
 </script>
 </body>
 </html>
