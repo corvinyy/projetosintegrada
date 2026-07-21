@@ -25,14 +25,20 @@ PCI-SITE/
 │ └── style.css # Estilos do site
 ├── js/
 │ └── script.js # Scripts JS do site
-├── pages/ # Páginas internas do site
-│ ├── inicio.html
-│ ├── sobre nós.html
-│ ├── consultorias.html
-│ ├── arquitetura.html
-│ ├── parcerias.html
-│ └── cases.html
-├── index.html # Página inicial (Início)
+├── pages/ # Páginas internas do site (URLs limpas, sem .html)
+│ ├── sobre/index.html # /pages/sobre/
+│ ├── servicos/index.html # /pages/servicos/
+│ ├── map-processos/index.html # /pages/map-processos/
+│ ├── arquitetura/index.html # /pages/arquitetura/
+│ ├── parceiros/index.html # /pages/parceiros/
+│ ├── cases/index.html # /pages/cases/
+│ ├── negocios/index.html # /pages/negocios/
+│ ├── marketing/index.html # /pages/marketing/
+│ ├── fastconsulting/index.html # /pages/fastconsulting/
+│ └── *.html # stubs de redirecionamento das antigas URLs .html
+├── index.html # Página inicial (/)
+├── sitemap.xml # Mapa do site para SEO
+├── robots.txt # Diretivas para crawlers
 └── CNAME
 └── README.md
 ```
