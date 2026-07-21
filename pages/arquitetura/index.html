@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16481631509"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16481631509');
+  </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquitetura - Projetos Consultoria Integrada</title>
+  <link rel="canonical" href="https://projetosintegrada.com.br/pages/arquitetura/">
+<meta name="description" content="Soluções de arquitetura e design de interiores da Projetos Consultoria Integrada (PCI): projeto arquitetônico, consultoria e design de interiores, reforma e paisagismo.">
+<link rel="icon" href="/assets/logos/PCI-logo-vermelha.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#c40001;
+    --primary-dark:#9a0001;
+    --bg:#FBFAF9;
+    --muted:#f5f5f5;
+    --text:#171717;
+    --text-soft:rgba(23,23,23,.7);
+    --border:#e7e5e4;
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Maven Pro",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+  h1,h2,h3{font-weight:800;line-height:1.12;letter-spacing:-.02em}
+  h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+  .section{padding:80px 0}
+  .section.alt{background:rgba(245,245,245,.5)}
+  .lead{color:var(--text-soft);font-size:1.05rem;max-width:640px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.25s;border:2px solid transparent}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--text);border-color:var(--border)}
+  .btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,250,249,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo-area{display:flex;align-items:center;gap:10px}
+  .logo-area img{height:46px;width:auto}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-weight:600;font-size:.95rem;color:var(--text-soft);transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--primary)}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem}
+  .hero{padding:150px 0 100px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:22px}
+  .hero h1 .hl{color:var(--primary)}
+  .hero .lead{margin-bottom:26px;font-size:1.12rem}
+  .hero-list{list-style:none;margin-bottom:32px;display:grid;gap:12px}
+  .hero-list li{display:flex;align-items:center;gap:12px;font-weight:600}
+  .hero-list li img{width:22px;height:auto}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-cta .btn img{width:18px;filter:brightness(0) invert(1)}
+  .hero-cta .btn-outline img{filter:none}
+  .hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#c40001,#5a0000);display:flex;align-items:center;justify-content:center;padding:30px}
+  .hero-img img{max-height:160px;width:auto}
+  .stats{background:var(--primary);color:#fff;padding:50px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;align-items:center}
+  .stats .num{font-size:2.2rem;font-weight:900;line-height:1}
+  .stats .lbl{font-size:.85rem;opacity:.9;margin-top:6px}
+  .stats .item:not(:last-child){border-right:1px solid rgba(255,255,255,.18)}
+  .stats .item.feature{font-size:1.15rem;font-weight:800;text-align:left;padding-right:10px}
+  .head-block{max-width:680px;margin-bottom:50px}
+  .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:center}
+  .partner{background:#fff;border:1px solid var(--border);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;padding:18px;transition:.2s}
+  .partner:hover{border-color:var(--primary);transform:translateY(-4px)}
+  .partner img{max-height:80px;max-width:100%;width:auto;object-fit:contain}
+  .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .case{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;transition:.25s;display:flex;gap:20px;align-items:flex-start}
+  .case:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+  .case img.logo{width:72px;height:72px;border-radius:12px;object-fit:contain;background:var(--muted);padding:6px;flex-shrink:0}
+  .case .quote{font-size:.98rem;color:var(--text);font-style:italic;margin-bottom:12px}
+  .case .author{font-weight:700;color:var(--primary);font-size:.92rem}
+  .cta-final{text-align:center;background:var(--primary);color:#fff;border-radius:20px;padding:70px 30px;margin:0 24px}
+  .cta-final h2{color:#fff;margin-bottom:16px}
+  .cta-final p{opacity:.92;max-width:560px;margin:0 auto 28px}
+  .cta-final .btn{background:#fff;color:var(--primary)}
+  .cta-final .btn:hover{background:rgba(255,255,255,.9)}
+  footer{background:#1a1a1a;color:#fff;padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1.2fr 1fr;gap:40px;margin-bottom:40px}
+  .foot-logo{height:60px;width:auto;margin-bottom:18px}
+  footer p,footer a,footer li{color:rgba(255,255,255,.75);font-size:.92rem}
+  footer h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;color:#fff}
+  footer ul{list-style:none}
+  footer li{margin-bottom:10px}
+  footer a:hover{color:var(--primary)}
+  .foot-contacts p{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+  .foot-contacts img{width:18px;filter:brightness(0) invert(1);opacity:.8;margin-top:3px;flex-shrink:0}
+  .foot-social{display:flex;gap:14px;margin-top:16px}
+  .foot-social img{width:26px;filter:brightness(0) invert(1) opacity(.6);transition:filter .2s}
+  .foot-social a:hover img{filter:brightness(0) invert(1) opacity(.85)}
+  .foot-social .wpp-foot{width:26px;height:26px;filter:drop-shadow(0 0 4px rgba(37,211,102,.9)) drop-shadow(0 0 11px rgba(37,211,102,.6));transition:filter .3s}.foot-social a:hover .wpp-foot{filter:drop-shadow(0 0 6px rgba(37,211,102,1)) drop-shadow(0 0 16px rgba(37,211,102,.8))}.foot-social .li-foot{display:inline-block;width:26px;height:26px;background-color:#fff;opacity:.6;-webkit-mask-image:url(../assets/icons/linkedin-icon.png);mask-image:url(../assets/icons/linkedin-icon.png);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-mode:luminance;mask-mode:luminance;transition:opacity .2s}.foot-social a:hover .li-foot{opacity:.85}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.85rem}
+  .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b,#25D366 55%,#128C7E);box-shadow:0 0 25px 6px rgba(37,211,102,.55),0 10px 26px rgba(18,140,126,.45);border:2px solid rgba(255,255,255,.55);animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s}
+  .wpp-float img{width:62px;height:62px}
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .menu-toggle{display:block}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-img{order:-1;aspect-ratio:16/9}
+    .cases-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px 0}
+    .stats .item{border-right:none!important}
+    .stats .item.feature{text-align:center;grid-column:1/-1}
+    .partners-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr}
+    .section{padding:60px 0}
+  }
+
+  /* ===== Serviços dropdown ===== */
+  .nav-dropdown{position:relative;display:inline-flex}
+  .nav-servicos-btn{background:none;border:none;font:inherit;color:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:0}
+  .nav-servicos-btn .caret{transition:transform .25s;font-size:.75em}
+  .nav-dropdown.open .nav-servicos-btn .caret{transform:rotate(180deg)}
+  .nav-dropdown.open .nav-servicos-btn{color:var(--primary)}
+  .servicos-menu{position:absolute;top:calc(100% + 14px);left:0;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;display:none;flex-direction:column;gap:2px;z-index:1200}
+  .nav-dropdown.open .servicos-menu{display:flex;animation:menuIn .2s ease}
+  @keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  .servicos-menu a{padding:11px 14px;border-radius:8px;font-weight:600;color:var(--text);transition:.18s}
+  .servicos-menu a:hover{background:var(--muted);color:var(--primary);padding-left:18px}
+  
+  /* ===== WhatsApp interativo ===== */
+  .wpp-float{position:fixed;bottom:26px;right:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#2be36b 0%,#25D366 55%,#128C7E 100%);box-shadow:0 10px 26px rgba(18,140,126,.45),inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.55);text-decoration:none;animation:wppBounce 2.6s ease-in-out infinite;transition:transform .25s,box-shadow .25s}
+  .wpp-float img,.wpp-float .wpp-float-icon{width:34px;height:34px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+  .wpp-float::before{content:"";position:absolute;top:7px;left:12px;width:24px;height:14px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0));pointer-events:none}
+  .wpp-float:hover{transform:scale(1.1) rotate(-4deg);box-shadow:0 14px 32px rgba(18,140,126,.6),inset 0 2px 4px rgba(255,255,255,.4)}
+  .wpp-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;animation:wppPulse 2s ease-out infinite;z-index:-1}
+  .wpp-tooltip{position:absolute;right:74px;background:#111;color:#fff;padding:9px 14px;border-radius:10px;font-size:.85rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(10px);transition:.25s;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .wpp-tooltip::after{content:"";position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:6px solid transparent;border-left-color:#111}
+  .wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
+  @keyframes wppPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.85);opacity:0}}
+  @keyframes wppBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}
+  
+  /* mobile nav */
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--primary)}
+  @media(max-width:880px){
+    .menu-toggle{display:block}
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:0;padding:8px 20px 16px;box-shadow:0 18px 40px rgba(0,0,0,.1);display:none}
+    .nav-links.nav-open{display:flex}
+    .nav-links>a,.nav-dropdown{width:100%;padding:12px 0;border-bottom:1px solid var(--border)}
+    .nav-dropdown{display:block}
+    .servicos-menu{position:static;box-shadow:none;border:none;padding:4px 0 4px 10px;min-width:0}
+    .nav-cta{display:none}
+  }
+
+    /* --- Stats 3 colunas --- */
+    .stats-grid-3{grid-template-columns:repeat(3,1fr)}
+    .stats-grid-3 .item.feature{grid-column:auto;text-align:left;font-size:1.15rem;line-height:1.3}
+    @media(max-width:900px){
+      .stats-grid-3{grid-template-columns:1fr}
+      .stats-grid-3 .item.feature{text-align:center}
+    }
+  
+    /* --- Sessão de soluções --- */
+    .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .solution-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;text-decoration:none;color:var(--text);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .solution-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:var(--primary)}
+    .solution-card h3{font-size:1.18rem;font-weight:800;margin-bottom:12px}
+    .solution-card p{color:var(--text-soft);font-size:.97rem;line-height:1.55;flex:1;margin-bottom:18px}
+    .solution-link{color:var(--primary);font-weight:700;font-size:.95rem}
+    @media(max-width:900px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.solutions-grid{grid-template-columns:1fr}}
+
+/* --- Emoji interativo nos cards --- */
+.card-emoji{display:inline-block;transition:transform .25s ease}
+.solution-card:hover .card-emoji{transform:scale(1.35) rotate(-8deg)}
+/* --- Botão voltar ao topo --- */
+.back-to-top{position:fixed;bottom:26px;left:26px;z-index:1500;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:1.3rem;box-shadow:0 10px 26px rgba(196,0,1,.4);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .25s}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{background:var(--primary-dark);transform:translateY(-3px)}
+</style>
+
+  <style>
+    .hero-service{padding:120px 0 70px;text-align:center}
+    .hero-service h1{font-size:clamp(2.2rem,5vw,3.4rem);max-width:14ch;margin:0 auto}
+    .hero-service .eyebrow{justify-content:center}
+    .hero-service .lead{margin:22px auto 0;text-align:center}
+    .hero-phrases{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;margin:28px 0 0;padding:0}
+    .hero-phrases li{color:var(--primary);font-weight:700;font-size:.98rem}
+    .hero-service .hero-cta{justify-content:center;margin-top:34px;display:flex}
+    .service-card{display:flex;flex-direction:column;align-items:flex-start}
+    .service-icon{width:46px;height:46px;object-fit:contain;margin-bottom:16px}
+    .service-card h3{font-size:1.12rem;margin-bottom:10px}
+    @media(max-width:900px){.hero-service{padding:100px 0 50px}}
+  
+  .btn-whatsapp{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 6px 16px rgba(196,0,1,.30);transition:transform .2s,box-shadow .2s}
+  .btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(196,0,1,.40);background:var(--primary-dark)}
+  .btn-whatsapp img,.btn-whatsapp .btn-ico,.btn-primary .btn-ico{width:18px;height:18px;flex:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="/" class="logo-area">
+      <img src="/assets/logos/PCI-logo-vermelha.png" alt="Logo PCI">
+    </a>
+    <nav class="nav-links">
+      <a href="/">Início</a>
+          <a href="/pages/sobre/">Sobre Nós</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-servicos-btn" aria-expanded="false">Serviços <span class="caret">&#9662;</span></button>
+        <div class="servicos-menu">
+          <!-- <a href="/pages/servicos/">Todos os Serviços</a> -->
+          <a href="/pages/map-processos/">Mapeamento de Processos</a>
+          <a href="/pages/negocios/">Plano de Negócios</a>
+          <a href="/pages/marketing/">Plano de Marketing</a>
+          <a href="/pages/fastconsulting/">Fast Consulting</a>
+          <a href="/pages/arquitetura/" class="active">Arquitetura</a>
+        </div>
+      </div>
+      <a href="/pages/parceiros/">Parceiros</a>
+      <a href="/pages/cases/">Cases</a>
+    </nav>
+    <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta"><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.2 2.2Z"/></svg> Entrar em contato</a>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+  </div>
+</header>
+
+<a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco no WhatsApp">
+  <span class="wpp-tooltip">Fale conosco no WhatsApp</span>
+  <span class="wpp-pulse"></span>
+  <svg class="wpp-float-icon" viewBox="0 0 32 32" width="34" height="34" fill="#fff" aria-hidden="true" focusable="false"><path d="M16.04 4C9.93 4 4.98 8.95 4.98 15.06c0 1.95.51 3.86 1.49 5.55L4.9 27.2l6.74-1.54a11.05 11.05 0 0 0 4.4.92h.01c6.11 0 11.06-4.95 11.06-11.06C27.11 8.95 22.15 4 16.04 4Zm0 20.02h-.01c-1.39 0-2.76-.37-3.96-1.08l-.28-.17-2.95.67.7-2.87-.18-.29a8.86 8.86 0 0 1-1.37-4.95c0-4.92 4.01-8.93 8.94-8.93 2.39 0 4.63.93 6.32 2.62a8.86 8.86 0 0 1 2.61 6.32c0 4.93-4.01 8.95-8.92 8.95Zm5.06-6.69c-.27-.14-1.64-.81-1.89-.9-.25-.09-.44-.14-.62.14-.18.27-.71.9-.87 1.08-.16.18-.32.2-.59.07-.27-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.64-1.54-1.91-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.83.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.52-.32Z"/></svg>
+</a>
+
+    <main>
+      <section class="hero hero-service">
+        <div class="container">
+          <div class="eyebrow">Serviços Â· Arquitetura</div>
+          <h1>Arquitetura que transforma <span class="hl">ideias em impacto</span></h1>
+          <p class="lead">Oferecemos soluções personalizadas para atender as necessidades do seu negócio, com qualidade, eficiência e foco em resultados.</p>
+          <ul class="hero-phrases">
+            <li>Estratégia, inovação e resultado.</li>
+            <li>Transformamos ideias em impacto!</li>
+            <li>Conectamos desafios a soluções.</li>
+          </ul>
+          <div class="hero-cta"><a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary">Entrar em contato</a></div>
+        </div>
+      </section>
+
+      <section id="solucoes" class="section">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">O que oferecemos</div>
+            <h2>Soluções de arquitetura e design</h2>
+            <p class="lead">Do projeto do zero ao paisagismo, cuidamos de cada etapa para entregar espaços funcionais e marcantes.</p>
+          </div>
+          <div class="solutions-grid">
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20projeto%20arquitet%C3%B4nico%20para%20desenvolver%20um%20novo%20projeto%20do%20zero." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="/assets/icons/servicos/arquitetonico-icon.png" alt="ARQUITETÔNICO" width="40" height="40">
+          <h3>ARQUITETÔNICO</h3>
+          <p>Criação e desenvolvimento de projetos desde o zero, contemplando todas as etapas do processo construtivo, da concepção inicial ao detalhamento técnico.</p>
+          <span class="solution-link">Fale conosco aqui</span>
+        </a>
+
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20consultoria%20de%20interiores%20para%20melhorar%20a%20organiza%C3%A7%C3%A3o%20e%20funcionalidade%20do%20ambiente." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="/assets/icons/servicos/consultoriadeinteriores-icon.png" alt="CONSULTORIA DE INTERIORES" width="40" height="40">
+          <h3>CONSULTORIA DE INTERIORES</h3>
+          <p>Análise e orientação para a reorganização ou renovação de ambientes, buscando melhorias estéticas e funcionais por meio de pequenas intervenções e mudanças de layout.</p>
+          <span class="solution-link">Fale conosco aqui</span>
+        </a>
+
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20design%20de%20interiores%20para%20desenvolver%20solu%C3%A7%C3%B5es%20personalizadas%20para%20meu%20ambiente." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="/assets/icons/servicos/designdeinteriores-icon.png" alt="DESIGN DE INTERIORES" width="40" height="40">
+          <h3>DESIGN DE INTERIORES</h3>
+          <p>Desenvolvimento de soluções detalhadas de mobiliario e acabamentos, com foco na ergonomia, estética e identidade do espaço, garantindo funcionalidade e conforto aos usuários.</p>
+          <span class="solution-link">Fale conosco aqui</span>
+        </a>
+
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20reforma%20de%20ambientes%20para%20melhorar%20a%20funcionalidade%20e%20est%C3%A9tica%20do%20local." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="/assets/icons/servicos/reforma-icon.png" alt="REFORMA" width="40" height="40">
+          <h3>REFORMA</h3>
+          <p>Execução e adequação de ambientes já existentes, envolvendo alterações estruturais como a subida e descida de paredes, com foco em melhorar a funcionalidade, o aproveitamento de espaços e a esttética do local.</p>
+          <span class="solution-link">Fale conosco aqui</span>
+        </a>
+
+        <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20sobre%20paisagismo%20para%20criar%20espa%C3%A7os%20verdes%20e%20integrar%20a%20natureza%20ao%20ambiente." target="_blank" class="solution-card service-card">
+          <img class="service-icon" src="/assets/icons/servicos/paisagismo-icon.png" alt="PAISAGISMO" width="40" height="40">
+          <h3>PAISAGISMO</h3>
+          <p>Planejamento e criação de espaços verdes por meio da seleção e disposiçãoo estratégica de plantas, priorizando bem-estar, harmonia visual e integração entre o ambiente construido e a natureza.</p>
+          <span class="solution-link">Fale conosco aqui</span>
+        </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section alt">
+        <div class="container">
+          <div class="cta-final">
+            <h2>Seu projeto, nossa próxima conquista.</h2>
+            <p>Fale diretamente com nossa equipe e vamos transformar sua ideia em um projeto completo.</p>
+            <a href="https://wa.me/5561998538516?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico" target="_blank" rel="noopener" class="btn btn-primary"><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.2 2.2Z"/></svg> Entrar em contato</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="/assets/logos/PCI-logo-escrita-branca.png" alt="Projetos Consultoria Integrada">
+        <div class="foot-contacts">
+          <p><img src="/assets/icons/email-icon.png" alt="Email">negocios@projetosintegrada.com.br</p>
+          <p><img src="/assets/icons/telefone-icon.png" alt="Telefone">(61) 99853-8516</p>
+        </div>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/projetosintegrada/" target="_blank"><img src="/assets/icons/instagram-icon.png" alt="Instagram"></a>
+          <a href="mailto:negocios@projetosintegrada.com.br"><img src="/assets/icons/email-icon.png" alt="Email"></a>
+          <a href="https://www.linkedin.com/company/projetosintegrada/" target="_blank"><span class="li-foot" role="img" aria-label="LinkedIn"></span></a>
+          </div>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <div class="foot-contacts">
+          <p><img src="/assets/icons/relogio-icon.png" alt="Horário"> Segunda a Sexta, das 09h às 18h.</p>
+          <p><img src="/assets/icons/pin-icon.png" alt="Localização"> SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 - CEP: 70790-075</p>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/pages/sobre/">Sobre Nóss</a></li>
+          <li><a href="/pages/servicos/">Consultorias</a></li>
+          <li><a href="/pages/arquitetura/">Arquitetura</a></li>
+          <li><a href="/pages/parceiros/">Parceiros</a></li>
+          <li><a href="/pages/cases/">Cases</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">&#9650;</button>
+<script>
+  (function(){
+    var btt = document.querySelector('.back-to-top');
+    if(btt){
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 400){ btt.classList.add('show'); }
+        else{ btt.classList.remove('show'); }
+      });
+      btt.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    }
+  })();
+</script>
+<script src="/js/script.js"></script>
+<script>
+  (function(){
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest('.nav-servicos-btn');
+      var drop = document.querySelector('.nav-dropdown');
+      if(btn && drop){
+        var open = drop.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        e.preventDefault();
+        return;
+      }
+      if(drop && !e.target.closest('.nav-dropdown')){
+        drop.classList.remove('open');
+        var b = drop.querySelector('.nav-servicos-btn');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+      var tgl = e.target.closest('.menu-toggle');
+      if(tgl){
+        var nav = document.querySelector('.nav-links');
+        if(nav) nav.classList.toggle('nav-open');
+      }
+    });
+  })();
+</script>
+</body>
+</html>
