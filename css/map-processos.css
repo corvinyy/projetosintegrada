@@ -253,13 +253,6 @@ p{color:var(--text-soft)}
 .cta-final .btn-primary{background:#fff;color:var(--primary)}
 .cta-final .btn-primary:hover{background:rgba(255,255,255,.9)}
 
-/* footer — mesmo padrão escuro do site institucional */
-.site-footer{background:#1a1a1a;color:#fff;padding:60px 0 30px}
-.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.footer-inner p{color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:6px}
-.brand--footer{font-size:1.1rem;font-weight:800;color:#fff !important}
-.brand--footer span{color:var(--primary)}
-.footer-copy{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin-top:20px;font-size:.85rem}
 
 /* scroll reveal — progressive enhancement (mesma lógica de segurança) */
 [data-reveal]{opacity:1;transform:none}
@@ -295,5 +288,4 @@ html.js-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
 @media(max-width:600px){
   .deliverable-grid{grid-template-columns:1fr}
   .cta-grid{padding:40px 24px}
-  .footer-inner{flex-direction:column}
-}
+  }
