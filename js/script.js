@@ -49,37 +49,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /* (SOBRE NÓS) titulo + texto + foto */
     const target = document.querySelector('#apresentacao');
-
+    if (target) {
         const sobreNosObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     document.querySelector('.sobre-apt-infos').classList.add('animate-titulo');
-                    observer.disconnect(); 
+                    observer.disconnect();
                 }
             });
-        }, { threshold: 0.5 }); 
+        }, { threshold: 0.5 });
 
         sobreNosObserver.observe(target);
-
+    }
 
     /* (SOBRE NÓS) Animação dos valores (slide sequencial) */
     const container = document.querySelector(".valores-infos");
-    const valores = container.querySelectorAll(".valores-lista");
+    if (container) {
+        const valores = container.querySelectorAll(".valores-lista");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                valores.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add("animate");
-                    }, index * 900);
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    valores.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add("animate");
+                        }, index * 900);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
 
-    observer.observe(container);
+        observer.observe(container);
+    }
 });
 
 /* Carrossel do MVD */

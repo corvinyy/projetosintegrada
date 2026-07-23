@@ -208,51 +208,15 @@
     </div>
   </div>
 </section>
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div>
-        <img class="foot-logo" src="/assets/logos/PCI-logo-escrita-branca.png" alt="Projetos Consultoria Integrada">
-        <div class="foot-contacts">
-          <p><img src="/assets/icons/email-icon.png" alt="Email">negocios@projetosintegrada.com.br</p>
-          <p><img src="/assets/icons/telefone-icon.png" alt="Telefone">(61) 99853-8516</p>
-        </div>
-        <div class="foot-social">
-          <a href="https://www.instagram.com/projetosintegrada/" target="_blank"><img src="/assets/icons/instagram-icon.png" alt="Instagram"></a>
-          <a href="mailto:negocios@projetosintegrada.com.br"><img src="/assets/icons/email-icon.png" alt="Email"></a>
-          </div>
-      </div>
-      <div>
-        <h4>Atendimento</h4>
-        <div class="foot-contacts">
-          <p><img src="/assets/icons/relogio-icon.png" alt="Horário"> Segunda a Sexta, das 09h às 18h.</p>
-          <p><img src="/assets/icons/pin-icon.png" alt="Localização"> SEPN 707/907, CEUB - Asa Norte, Bloco 2, Sala 2311 - CEP: 70790-075</p>
-        </div>
-      </div>
-      <div>
-        <h4>Navegação</h4>
-        <ul>
-          <li><a href="/">Início</a></li>
-          <li><a href="/pages/sobre/">Sobre Nós</a></li>
-          <li><a href="/pages/servicos/">Consultorias</a></li>
-          <li><a href="/pages/arquitetura/">Arquitetura</a></li>
-          <li><a href="/pages/parceiros/">Parceiros</a></li>
-          <li><a href="/pages/cases/">Cases</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <p>© 2026 Projetos Consultoria Integrada. Todos os direitos reservados.</p>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="/js/footer.js"></script>
 <script>
 (function(){
   document.addEventListener('click', function(e){
     var btn = e.target.closest('.nav-servicos-btn');
     var drop = document.querySelector('.nav-dropdown');
     if(btn && drop){ var open = drop.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); e.preventDefault(); return; }
-    if(drop && !e.target.closest('.nav-dropdown')){ drop.classList.remove('open'); }
+    if(drop && !e.target.closest('.nav-dropdown')){ drop.classList.remove('open'); var b = drop.querySelector('.nav-servicos-btn'); if(b) b.setAttribute('aria-expanded','false'); }
     var tgl = e.target.closest('.menu-toggle');
     if(tgl){ var nav = document.querySelector('.nav-links'); if(nav) nav.classList.toggle('nav-open'); }
   });
@@ -266,5 +230,6 @@
   }
 })();
 </script>
+<script src="/js/script.js"></script>
 </body>
 </html>
